@@ -1,0 +1,73 @@
+{
+  "audio": {
+    "id": "gameover",
+    "file": "sfx/gameover.wav",
+    "play": true
+  },
+  "inputEvent": {
+    "key": "enter",
+    "action": { "name": "button.click", "id": "highScoreOK" }
+  },
+  "replaceVars": "value",
+  "image": {
+    "id": "title",
+    "texture": "background",
+    "textureRect": ["|$.#scale * 322|", "|$.#scale * 194|"],
+    "position": ["|$.#scale * 255|", "|$.#scale * 159|"],
+    "anchor": "none"
+  },
+  "text": [
+    {
+      "id": "gameOverTitle",
+      "font": "font",
+      "position": ["|$.#scale * 415|", "|$.#scale * 168|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "text": "Game Over"
+    },
+    {
+      "id": "gameOverText",
+      "font": "font",
+      "position": ["|$.#scale * 272|", "|$.#scale * 194|"],
+      "anchor": "none",
+      "file": "ui/gameOverHighScore.txt"
+    }
+  ],
+  "inputText": {
+    "id": "highScoreName",
+    "font": "font",
+    "position": ["|$.#scale * 272|", "|$.#scale * 329|"],
+    "anchor": "none",
+    "minLength": 1,
+    "maxLength": 20,
+    "regex": "[\\w ]*",
+    "onClick": [
+      {
+        "replaceVars": false,
+        "name": "loadJson",
+        "json": {
+          "action": {
+            "replaceVars": "value",
+            "name": "level.addHighScore",
+            "scoreName": "|highScoreName.text|",
+            "scoreLevel": "|currentLevel.level|",
+            "score": "|currentLevel.score|"
+          }
+        }
+      },
+      { "name": "level.save", "file": "level/highScores.json" },
+      { "name": "drawable.delete", "id": "gameOverTitle" },
+      { "name": "drawable.delete", "id": "gameOverText" },
+      { "name": "drawable.delete", "id": "highScoreName" },
+      { "name": "drawable.delete", "id": "highScoreOK" },
+      { "name": "load", "file": "ui/scoresPanel.json" }
+    ]
+  },
+  "button": {
+    "id": "highScoreOK",
+    "texture": "empty",
+    "textureRect": [1, 1],
+    "anchor": "none",
+    "onClick": { "name": "inputText.click", "id": "highScoreName" }
+  }
+}

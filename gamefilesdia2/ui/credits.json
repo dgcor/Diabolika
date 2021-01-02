@@ -1,0 +1,21 @@
+{
+  "action": {
+    "name": "resource.add",
+    "id": "credits"
+  },
+  "replaceVars": "value",
+  "image": {
+    "id": "title",
+    "texture": "title",
+    "position": ["|$.#scale * 192|", "|$.#scale * 2|"],
+    "anchor": "none"
+  },
+  "text": {
+    "id": "credits",
+    "font": "font",
+    "position": ["|$.#scale * 415|", "|$.#scale * 145|"],
+    "anchor": "none",
+    "horizontalAlign": "center",
+    "file": "ui/credits.txt"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "level": {
+    "id": "level",
+    "highScores": [
+      {
+        "name": "Old Loth",
+        "level": 10,
+        "score": 50000
+      },
+      {
+        "name": "Sir Plohound",
+        "level": 9,
+        "score": 30000
+      },
+      {
+        "name": "Lord Trebor of Nurd",
+        "level": 8,
+        "score": 20000
+      },
+      {
+        "name": "Mad Dog the Wild",
+        "level": 7,
+        "score": 10000
+      },
+      {
+        "name": "Ara of the Squirrels",
+        "level": 6,
+        "score": 8000
+      },
+      {
+        "name": "Black Wizard Yu",
+        "level": 5,
+        "score": 5000
+      },
+      {
+        "name": "Mad Count Saulesco",
+        "level": 4,
+        "score": 4000
+      },
+      {
+        "name": "Juan Perriere",
+        "level": 3,
+        "score": 3000
+      },
+      {
+        "name": "Snarbal Wormgirdle",
+        "level": 2,
+        "score": 2000
+      },
+      {
+        "name": "The Gimp",
+        "level": 1,
+        "score": 1000
+      }
+    ]
+  }
+}

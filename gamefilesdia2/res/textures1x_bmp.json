@@ -1,0 +1,14 @@
+{
+  "texture": [
+    { "file": "gfx/buttons.bmp", "mask": "0xFF00FF" },
+    { "file": "gfx/demons.bmp", "mask": "0xFF00FF" },
+    { "file": "gfx/ent.bmp", "mask": "0xFF00FF" },
+    { "file": "gfx/explode.bmp", "mask": "0xFF00FF" },
+    { "file": "gfx/font.png" },
+    { "file": "gfx/fx.bmp", "mask": "0xFF00FF" },
+    { "file": "gfx/misc.bmp", "mask": "0xFF00FF" },
+    { "file": "gfx/side.bmp", "mask": "0xFF00FF" },
+    { "file": "gfx/tile.bmp", "mask": "0xFF00FF" },
+    { "file": "gfx/title.bmp", "mask": "0xFF00FF" }
+  ]
+}

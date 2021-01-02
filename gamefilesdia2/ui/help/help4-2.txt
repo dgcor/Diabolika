@@ -1,0 +1,8 @@
+The Magik Missile also works
+differently. After a Magik
+Missile is placed on the board,
+it is always replaced by a
+Target on the sidebar. When
+the Missile is detonated, it
+will fly to wherever the target
+is placed.

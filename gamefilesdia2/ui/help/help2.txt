@@ -1,0 +1,21 @@
+Regeneration: Demons are summoned onto the game
+board. The player does nothing during this phase.
+
+Alignment: Three units are always available for
+you to pick from the sidebar. Left-click a unit
+to select it, and then left-click again on the
+board to place it. Right-click while the unit
+is selected to rotate it. Left-click on the
+empty space in the sidebar to return the unit.
+After all your available units are placed on the
+board, the Detonation phase begins.
+
+Detonation: You are given two detonators per round.
+Left-click on a tile to detonate it. If you detonate
+a tile with a unit on it, that unit will explode.
+If you detonate a demon directly, it will take one
+damage. When the detonation phase is over, another
+round will begin.
+
+The game is over if there are ten or more demons
+alive on the board after the Detonation phase ends.

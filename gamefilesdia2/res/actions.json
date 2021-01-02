@@ -1,0 +1,39 @@
+{
+  "action": [
+    {
+      "name": "action.set",
+      "id": "playSoundBubble",
+      "action": { "name": "sound.loadPlay", "file": "sfx/bubble.wav" }
+    },
+    {
+      "name": "action.set",
+      "id": "playSoundExplode",
+      "action": { "name": "sound.loadPlay", "file": "sfx/explode.wav", "unique": true }
+    },
+    {
+      "name": "action.set",
+      "id": "playSoundFrog",
+      "action": { "name": "sound.loadPlay", "file": "sfx/frog.wav" }
+    },
+    {
+      "name": "action.set",
+      "id": "playSoundMissile",
+      "action": { "name": "sound.loadPlay", "file": "sfx/missile.wav", "unique": true, "seek": 1000 }
+    },
+    {
+      "name": "action.set",
+      "id": "playSoundRattler",
+      "action": { "name": "sound.loadPlay", "file": "sfx/rattler.wav" }
+    },
+    {
+      "name": "action.set",
+      "id": "playSoundRegen",
+      "action": { "name": "sound.loadPlay", "file": "sfx/regen.wav" }
+    },
+    {
+      "name": "action.set",
+      "id": "playSoundThump",
+      "action": { "name": "sound.loadPlay", "file": "sfx/thump.wav" }
+    }
+  ]
+}

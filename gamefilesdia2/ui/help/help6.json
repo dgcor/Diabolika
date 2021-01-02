@@ -1,0 +1,94 @@
+{
+  "load": "ui/help/helpPanel.json",
+  "replaceVars": "value",
+  "button": {
+    "id": "default",
+    "texture": "empty",
+    "textureRect": ["|$.#scale * 448|", "|$.#scale * 480|"],
+    "position": ["|$.#scale * 192|", 0],
+    "anchor": "all",
+    "onClick": [
+      { "name": "resource.pop", "id": "popup" },
+      { "name": "load", "file": "ui/help/help7.json" }
+    ]
+  },
+  "image": [
+    {
+      "id": "ironMaiden",
+      "texturePack": "ironMaiden",
+      "position": ["|$.#scale * 224|", "|$.#scale * 120|"],
+      "anchor": "none"
+    },
+    {
+      "id": "ironMaidenExplosion",
+      "texturePack": "explode",
+      "textureIndex": 9,
+      "position": ["|$.#scale * 288|", "|$.#scale * 130|"],
+      "anchor": "none"
+    },
+    {
+      "id": "kultist",
+      "texturePack": "kultist",
+      "position": ["|$.#scale * 224|", "|$.#scale * 248|"],
+      "anchor": "none"
+    },
+    {
+      "id": "kultistExplosion",
+      "texturePack": "explode",
+      "textureIndex": 10,
+      "position": ["|$.#scale * 288|", "|$.#scale * 258|"],
+      "anchor": "none"
+    },
+    {
+      "id": "fallenAngel",
+      "texturePack": "fallenAngel",
+      "position": ["|$.#scale * 224|", "|$.#scale * 376|"],
+      "anchor": "none"
+    },
+    {
+      "id": "fallenAngelExplosion",
+      "texturePack": "explode",
+      "textureIndex": 11,
+      "position": ["|$.#scale * 288|", "|$.#scale * 386|"],
+      "anchor": "none"
+    }
+  ],
+  "text": [
+    {
+      "id": "txtHelp1",
+      "font": "font",
+      "position": ["|$.#scale * 415|", "|$.#scale * 32|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "text": "Special Units"
+    },
+    {
+      "id": "txtHelp2",
+      "font": "font",
+      "position": ["|$.#scale * 224|", "|$.#scale * 62|"],
+      "anchor": "none",
+      "file": "ui/help/help6.txt"
+    },
+    {
+      "id": "txtHelp3",
+      "font": "font",
+      "position": ["|$.#scale * 366|", "|$.#scale * 130|"],
+      "anchor": "none",
+      "file": "ui/help/help6-1.txt"
+    },
+    {
+      "id": "txtHelp4",
+      "font": "font",
+      "position": ["|$.#scale * 366|", "|$.#scale * 258|"],
+      "anchor": "none",
+      "file": "ui/help/help6-2.txt"
+    },
+    {
+      "id": "txtHelp5",
+      "font": "font",
+      "position": ["|$.#scale * 366|", "|$.#scale * 386|"],
+      "anchor": "none",
+      "file": "ui/help/help6-3.txt"
+    }
+  ]
+}

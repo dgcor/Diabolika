@@ -1,0 +1,17 @@
+{
+  "title" : "Diabolika Extended",
+  "version": "1.0",
+  "saveDir": ".diabolikaex",
+  "refWindowSize": [640, 480],
+  "minWindowSize": [640, 480],
+  "windowSize": [640, 480],
+  "framerate": 60,
+  "keepAR": true,
+  "stretchToFit": true,
+  "smoothScreen": true,
+  "mountFile": { "file": "gamefilesdia2" },
+  "load": "settings.json",
+  "load": "res/updateSettings.json",
+  "init": true,
+  "action": { "name": "load", "file": "ui/loadMain.json" }
+}

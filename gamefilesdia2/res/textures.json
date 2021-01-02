@@ -1,0 +1,25 @@
+{
+  "texture": [
+    {
+      "id": "background",
+      "color": "0x000000",
+      "size": [1, 1]
+    },
+    {
+      "id": "empty",
+      "color": "0x00000000",
+      "size": [1, 1]
+    }
+  ],
+  "action": {
+    "name": "switch",
+    "param": "%scale%",
+    "case": [
+      {
+        "value": 2,
+        "action": { "name": "load", "file": "res/textures2x.json" }
+      }
+    ],
+    "default": { "name": "load", "file": "res/textures1x.json" }
+  }
+}

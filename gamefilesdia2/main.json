@@ -1,0 +1,16 @@
+{
+  "title" : "Diabolika 2",
+  "version": "1.0",
+  "saveDir": ".diabolika2",
+  "refWindowSize": [640, 480],
+  "minWindowSize": [640, 480],
+  "windowSize": [640, 480],
+  "framerate": 60,
+  "keepAR": true,
+  "stretchToFit": true,
+  "smoothScreen": true,
+  "load": "settings.json",
+  "load": "res/updateSettings.json",
+  "init": true,
+  "action": { "name": "load", "file": "ui/loadMain.json" }
+}

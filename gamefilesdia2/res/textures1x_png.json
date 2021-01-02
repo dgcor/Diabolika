@@ -1,0 +1,14 @@
+{
+  "texture": [
+    { "file": "gfx/buttons.png" },
+    { "file": "gfx/demons.png" },
+    { "file": "gfx/ent.png" },
+    { "file": "gfx/explode.png" },
+    { "file": "gfx/font.png" },
+    { "file": "gfx/fx.png" },
+    { "file": "gfx/misc.png" },
+    { "file": "gfx/side.png" },
+    { "file": "gfx/tile.png" },
+    { "file": "gfx/title.png" }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "load": "ui/help/helpPanel.json",
+  "replaceVars": "value",
+  "button": {
+    "id": "default",
+    "texture": "empty",
+    "textureRect": ["|$.#scale * 448|", "|$.#scale * 480|"],
+    "position": ["|$.#scale * 192|", 0],
+    "anchor": "all",
+    "onClick": [
+      { "name": "resource.pop", "id": "popup" },
+      { "name": "load", "file": "ui/help/help8.json" }
+    ]
+  },
+  "image": [
+    {
+      "id": "minorDemon",
+      "texturePack": "minorDemon",
+      "position": ["|$.#scale * 224|", "|$.#scale * 120|"],
+      "anchor": "none"
+    },
+    {
+      "id": "majorDemon",
+      "texturePack": "majorDemon",
+      "position": ["|$.#scale * 224|", "|$.#scale * 248|"],
+      "anchor": "none"
+    },
+    {
+      "id": "elderDemon",
+      "texturePack": "elderDemon",
+      "position": ["|$.#scale * 224|", "|$.#scale * 376|"],
+      "anchor": "none"
+    }
+  ],
+  "text": [
+    {
+      "id": "txtHelp1",
+      "font": "font",
+      "position": ["|$.#scale * 415|", "|$.#scale * 32|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "text": "Demons"
+    },
+    {
+      "id": "txtHelp2",
+      "font": "font",
+      "position": ["|$.#scale * 224|", "|$.#scale * 62|"],
+      "anchor": "none",
+      "file": "ui/help/help7.txt"
+    },
+    {
+      "id": "txtHelp3",
+      "font": "font",
+      "position": ["|$.#scale * 289|", "|$.#scale * 130|"],
+      "anchor": "none",
+      "file": "ui/help/help7-1.txt"
+    },
+    {
+      "id": "txtHelp4",
+      "font": "font",
+      "position": ["|$.#scale * 289|", "|$.#scale * 258|"],
+      "anchor": "none",
+      "file": "ui/help/help7-2.txt"
+    },
+    {
+      "id": "txtHelp5",
+      "font": "font",
+      "position": ["|$.#scale * 289|", "|$.#scale * 386|"],
+      "anchor": "none",
+      "file": "ui/help/help7-3.txt"
+    }
+  ]
+}

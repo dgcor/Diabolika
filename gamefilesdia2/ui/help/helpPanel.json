@@ -1,0 +1,19 @@
+{
+  "action": {
+    "name": "resource.add",
+    "id": "popup",
+    "ignorePrevious": true
+  },
+  "inputEvent": {
+    "key": ["enter", " "],
+    "action": "#btnBackground.click"
+  },
+  "replaceVars": "value",
+  "image": {
+    "id": "title",
+    "texture": "background",
+    "textureRect": ["|$.#scale * 448|", "|$.#scale * 480|"],
+    "position": ["|$.#scale * 192|", 0],
+    "anchor": "none"
+  }
+}

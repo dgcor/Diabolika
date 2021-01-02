@@ -1,0 +1,5 @@
+Kultists have the special prop-
+erty that when one explodes,
+every Kultist on the board will
+explode. You get three Kultists
+per each Mandrake burned.

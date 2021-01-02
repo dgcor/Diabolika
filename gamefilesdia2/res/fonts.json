@@ -1,0 +1,17 @@
+{
+  "texturePack": {
+    "id": "font",
+    "texture": "font",
+    "frames": [95, 1],
+    "startIndex": 32,
+    "direction": "horizontal"
+  },
+  "replaceVars": "value",
+  "font": {
+    "id": "font",
+    "texturePack": "font",
+    "space": "|$.#scale * 8|",
+    "newLine": "|$.#scale * 15|",
+    "tab": "|$.#scale * 16|"
+  }
+}

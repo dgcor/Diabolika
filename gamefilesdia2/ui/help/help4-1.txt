@@ -1,0 +1,7 @@
+The Kannon works a little bit
+differently than other units.
+When it is detonated, it fires
+a kannonball in the direction it
+is facing. This kannonball will
+detonate everything that gets in
+it's way.

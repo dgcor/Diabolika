@@ -1,0 +1,198 @@
+{
+  "unitClass": [
+    {
+      "id": "minorDemon",
+      "type": "demon",
+      "texturePack": "minorDemon",
+      "points": 50
+    },
+    {
+      "id": "majorDemon",
+      "type": "demon",
+      "texturePack": "majorDemon",
+      "points": 100,
+      "spawns": "minorDemon"
+    },
+    {
+      "id": "elderDemon",
+      "type": "demon",
+      "texturePack": "elderDemon",
+      "points": 200,
+      "spawns": "majorDemon"
+    },
+    {
+      "id": "hydraDemon",
+      "type": "demon",
+      "texturePack": "fallenAngel",
+      "points": 100,
+      "spawns": "minorDemon",
+      "spawnCount": "2 + :rnd(2)",
+      "spawnArea": [-2, -2, 2, 2]
+    },
+    {
+      "id": "strawGolem",
+      "type": "exploder",
+      "texturePack": "strawGolem",
+      "points": 2,
+      "directions": 4,
+      "explodePattern": [
+        [[0, 1]],
+        [[-1, 0]],
+        [[0, -1]],
+        [[1, 0]]
+      ],
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "hydra",
+      "type": "exploder",
+      "texturePack": "hydra",
+      "points": 4,
+      "directions": 2,
+      "explodePattern": [
+        [[0, 1], [0, -1]],
+        [[-1, 0], [1, 0]]
+      ],
+      "onCreate": [
+        "playSoundThump",
+        "playSoundRattler"
+      ]
+    },
+    {
+      "id": "blueImp",
+      "type": "exploder",
+      "texturePack": "blueImp",
+      "points": 6,
+      "explodePattern": [[0, 1], [-1, 0], [0, -1], [1, 0]],
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "purpleImp",
+      "type": "exploder",
+      "texturePack": "purpleImp",
+      "points": 6,
+      "explodePattern": [[-1, 1], [-1, -1], [1, -1], [1, 1]],
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "flameToad",
+      "type": "exploder",
+      "texturePack": "flameToad",
+      "points": 8,
+      "explodePattern": [[0, 2], [-2, 0], [0, -2], [2, 0]],
+      "onCreate": [
+        "playSoundThump",
+        "playSoundFrog"
+      ]
+    },
+    {
+      "id": "exploder",
+      "type": "exploder",
+      "texturePack": "exploder",
+      "points": 10,
+      "explodePattern": [[0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1], [1, -1], [1, 0], [1, 1]],
+      "onCreate": [
+        "playSoundThump",
+        "playSoundBubble"
+      ]
+    },
+    {
+      "id": "kannon",
+      "type": "exploder",
+      "texturePack": "kannon",
+      "explosionCompositeTexture": "explosionkannon",
+      "points": 20,
+      "directions": 4,
+      "explodePattern": [
+        [[0, 1]],
+        [[-1, 0]],
+        [[0, -1]],
+        [[1, 0]]
+      ],
+      "blastExpands": true,
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "magikMissile",
+      "type": "exploder",
+      "texturePack": "magikMissile",
+      "explosionCompositeTexture": "explosionMissile",
+      "points": 20,
+      "links": "missileTarget",
+      "linkType": "unidirectional",
+      "onCreate": "playSoundThump",
+      "onDestroy": "playSoundMissile"
+    },
+    {
+      "id": "missileTarget",
+      "type": "exploder",
+      "texturePack": "missileTarget",
+      "points": 10,
+      "explodePattern": [[0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1], [1, -1], [1, 0], [1, 1]],
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "sacrifice",
+      "type": "sacrifice",
+      "texturePack": "sacrifice",
+      "points": 100,
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "mandrake",
+      "type": "sacrifice",
+      "texturePack": "mandrake",
+      "points": 10,
+      "onCreate": "playSoundThump",
+      "onDestroy": {
+        "name": "randomList",
+        "actions": [
+          { "name": "level.queueUnit", "unit": "ironMaiden" },
+          { "name": "level.queueUnit", "unit": "kultist" },
+          { "name": "level.queueUnit", "unit": "fallenAngel" }
+        ]
+      }
+    },
+    {
+      "id": "ironMaiden",
+      "type": "exploder",
+      "texturePack": "ironMaiden",
+      "points": 20,
+      "directions": 4,
+      "explodePattern": [
+        [[-1, 1], [0, 1], [1, 1], [-1, 2], [0, 2], [1, 2]],
+        [[-1, -1], [-1, 0], [-1, 1], [-2, -1], [-2, 0], [-2, 1]],
+        [[-1, -1], [0, -1], [1, -1], [-1, -2], [0, -2], [1, -2]],
+        [[1, -1], [1, 0], [1, 1], [2, -1], [2, 0], [2, 1]]
+      ],
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "kultist",
+      "type": "exploder",
+      "texturePack": "kultist",
+      "points": 30,
+      "explodePattern": [[0, 1], [-1, 0], [0, -1], [1, 0]],
+      "links": "kultist",
+      "linkType": "unit",
+      "linkCount": 2,
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "fallenAngel",
+      "type": "exploder",
+      "texturePack": "fallenAngel",
+      "points": 50,
+      "explodePattern": [
+        [0, -3],
+        [0, -2],
+        [-1, -1], [0, -1], [1, -1],
+        [-3, 0], [-2, 0], [-1, 0], [1, 0], [2, 0], [3, 0],
+        [-1, 1], [0, 1], [1, 1],
+        [0, 2],
+        [0, 3]
+      ],
+      "onCreate": "playSoundThump"
+    }
+  ]
+}

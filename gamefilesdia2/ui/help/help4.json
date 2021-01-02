@@ -1,0 +1,80 @@
+{
+  "load": "ui/help/helpPanel.json",
+  "replaceVars": "value",
+  "button": {
+    "id": "default",
+    "texture": "empty",
+    "textureRect": ["|$.#scale * 448|", "|$.#scale * 480|"],
+    "position": ["|$.#scale * 192|", 0],
+    "anchor": "all",
+    "onClick": [
+      { "name": "resource.pop", "id": "popup" },
+      { "name": "load", "file": "ui/help/help5.json" }
+    ]
+  },
+  "image": [
+    {
+      "id": "kannon",
+      "texturePack": "kannon",
+      "position": ["|$.#scale * 224|", "|$.#scale * 84|"],
+      "anchor": "none"
+    },
+    {
+      "id": "kannonExplosion",
+      "texturePack": "explode",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 288|", "|$.#scale * 94|"],
+      "anchor": "none"
+    },
+    {
+      "id": "magikMissile",
+      "texturePack": "magikMissile",
+      "position": ["|$.#scale * 224|", "|$.#scale * 269|"],
+      "anchor": "none"
+    },
+    {
+      "id": "magikMissileExplosion",
+      "texturePack": "explode",
+      "textureIndex": 7,
+      "position": ["|$.#scale * 288|", "|$.#scale * 279|"],
+      "anchor": "none"
+    },
+    {
+      "id": "missileTarget",
+      "texturePack": "missileTarget",
+      "position": ["|$.#scale * 224|", "|$.#scale * 333|"],
+      "anchor": "none"
+    },
+    {
+      "id": "missileTargetExplosion",
+      "texturePack": "explode",
+      "textureIndex": 8,
+      "position": ["|$.#scale * 288|", "|$.#scale * 343|"],
+      "anchor": "none"
+    }
+  ],
+  "text": [
+    {
+      "id": "txtHelp1",
+      "font": "font",
+      "position": ["|$.#scale * 415|", "|$.#scale * 32|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "text": "Basic Units (cont'd)"
+    },
+    {
+      "id": "txtHelp2",
+      "font": "font",
+      "position": ["|$.#scale * 366|", "|$.#scale * 94|"],
+      "anchor": "none",
+      "file": "ui/help/help4-1.txt"
+    },
+    {
+      "id": "txtHelp3",
+      "font": "font",
+      "position": ["|$.#scale * 366|", "|$.#scale * 278|"],
+      "anchor": "none",
+      "file": "ui/help/help4-2.txt"
+    }
+  ]
+}
