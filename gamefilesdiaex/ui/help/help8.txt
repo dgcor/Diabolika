@@ -1,0 +1,13 @@
+Rather than left-clicking on your units to pick
+them, you can press '1', '2', and '3', correspond-
+ing to the units from left to right. This can
+save some much needed time in the later levels!
+
+On the same note, you can press the same number to
+return the currently active unit back to the side-
+bar.
+
+Space or return places the unit in the board and
+w, s, a, d / up, down, left, right move the unit.
+
+Press r or left-click to rotate the selected unit.

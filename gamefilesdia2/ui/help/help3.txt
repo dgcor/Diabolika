@@ -1,0 +1,15 @@
+These are some of the basic units
+that are available to you during
+the game. When detonated, each
+one explodes differently. It's
+up to you to figure out how to
+use them to maximize your des-
+tructive potential.
+
+The yellow grid represents the
+area that could be affected by
+the explosion. The green square
+represents the unit. The red
+squares represent the tiles that
+will detonate if the unit is
+blown up.

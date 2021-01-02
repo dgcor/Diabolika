@@ -1,0 +1,237 @@
+{
+  "action": [
+    {
+      "name": "action.set",
+      "id": "updateUnitQueue1",
+      "action": {
+        "name": "if.equal",
+        "param1": "%currentLevel.hasQueuedUnit.0%",
+        "param2": true,
+        "then": { "name": "image.setTexture", "id": "unitQueue1", "query": "currentLevel.queue.0" },
+        "else": { "name": "image.setTexture", "id": "unitQueue1", "texture": "empty" }
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "updateUnitQueue2",
+      "action": {
+        "name": "if.equal",
+        "param1": "%currentLevel.hasQueuedUnit.1%",
+        "param2": true,
+        "then": { "name": "image.setTexture", "id": "unitQueue2", "query": "currentLevel.queue.1" },
+        "else": { "name": "image.setTexture", "id": "unitQueue2", "texture": "empty" }
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "updateUnitQueue3",
+      "action": {
+        "name": "if.equal",
+        "param1": "%currentLevel.hasQueuedUnit.2%",
+        "param2": true,
+        "then": { "name": "image.setTexture", "id": "unitQueue3", "query": "currentLevel.queue.2" },
+        "else": { "name": "image.setTexture", "id": "unitQueue3", "texture": "empty" }
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "updateUnitQueues",
+      "action": [
+        "updateUnitQueue1",
+        "updateUnitQueue2",
+        "updateUnitQueue3"
+      ]
+    },
+    {
+      "name": "action.set",
+      "id": "newGame",
+      "action": [
+        { "name": "level.newGame" },
+        "updateUnitQueue1",
+        "updateUnitQueue2",
+        "updateUnitQueue3"
+      ]
+    },
+    {
+      "name": "action.set",
+      "id": "hideLeftClickMsg",
+      "action": { "name": "drawable.visible", "id": "txtLeftClick", "visible": false }
+    },
+    {
+      "name": "action.set",
+      "id": "showLeftClickMsg",
+      "action": { "name": "drawable.visible", "id": "txtLeftClick", "visible": true }
+    },
+    {
+      "name": "action.set",
+      "id": "showLeftClickMsg1",
+      "action": {
+        "name": "if.equal",
+        "param1": "%currentLevel.selectedUnitQueue%",
+        "param2": 0,
+        "then": "showLeftClickMsg",
+        "else": "hideLeftClickMsg"
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "showLeftClickMsg2",
+      "action": {
+        "name": "if.equal",
+        "param1": "%currentLevel.selectedUnitQueue%",
+        "param2": 1,
+        "then": "showLeftClickMsg",
+        "else": "hideLeftClickMsg"
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "showLeftClickMsg3",
+      "action": {
+        "name": "if.equal",
+        "param1": "%currentLevel.selectedUnitQueue%",
+        "param2": 2,
+        "then": "showLeftClickMsg",
+        "else": "hideLeftClickMsg"
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "selectUnitQueue1",
+      "action": {
+        "name": "if.greater",
+        "param1": "%currentLevel.units%",
+        "param2": 0,
+        "then": [
+          { "name": "level.selectUnitQueue", "queue": 0 },
+          "updateUnitQueue1"
+        ]
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "selectUnitQueue2",
+      "action": {
+        "name": "if.greater",
+        "param1": "%currentLevel.units%",
+        "param2": 0,
+        "then": [
+          { "name": "level.selectUnitQueue", "queue": 1 },
+          "updateUnitQueue2"
+        ]
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "selectUnitQueue3",
+      "action": {
+        "name": "if.greater",
+        "param1": "%currentLevel.units%",
+        "param2": 0,
+        "then": [
+          { "name": "level.selectUnitQueue", "queue": 2 },
+          "updateUnitQueue3"
+        ]
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "selectUnitQueue1Once",
+      "action": {
+        "name": "if.lower",
+        "param1": "%currentLevel.selectedUnitQueue%",
+        "param2": 0,
+        "then": "selectUnitQueue1"
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "selectUnitQueue2Once",
+      "action": {
+        "name": "if.lower",
+        "param1": "%currentLevel.selectedUnitQueue%",
+        "param2": 0,
+        "then": "selectUnitQueue2"
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "selectUnitQueue3Once",
+      "action": {
+        "name": "if.lower",
+        "param1": "%currentLevel.selectedUnitQueue%",
+        "param2": 0,
+        "then": "selectUnitQueue3"
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "returnUnitToQueue",
+      "action": {
+        "name": "loadJson",
+        "json": {
+          "action": {
+            "replaceVars": "value",
+            "name": ">=",
+            "param1": "%currentLevel.selectedUnitQueue%",
+            "param2": 0,
+            "then": [
+              { "name": "level.selectUnitQueue", "queue": "|currentLevel.selectedUnitQueue|" },
+              "updateUnitQueues",
+              "showLeftClickMsg1",
+              "showLeftClickMsg2",
+              "showLeftClickMsg3"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "moveSelectedTileUp",
+      "action": { "name": "level.moveSelectedTile", "offset": [0, -1] }
+    },
+    {
+      "name": "action.set",
+      "id": "moveSelectedTileDown",
+      "action": { "name": "level.moveSelectedTile", "offset": [0, 1] }
+    },
+    {
+      "name": "action.set",
+      "id": "moveSelectedTileLeft",
+      "action": { "name": "level.moveSelectedTile", "offset": [-1, 0] }
+    },
+    {
+      "name": "action.set",
+      "id": "moveSelectedTileRight",
+      "action": { "name": "level.moveSelectedTile", "offset": [1, 0] }
+    },
+    {
+      "name": "action.set",
+      "id": "rotateSelectedUnit",
+      "action": { "name": "level.rotateSelectedUnit" }
+    },
+    {
+      "name": "action.set",
+      "id": "makeMove",
+      "action": [
+        { "name": "level.makeMove" },
+        "updateUnitQueues",
+        "hideLeftClickMsg1",
+        "showLeftClickMsg2",
+        "showLeftClickMsg3"
+      ]
+    },
+    {
+      "name": "action.set",
+      "id": "gameOver",
+      "action": {
+        "name": "if.greater",
+        "param1": "%currentLevel.score%",
+        "param2": "%currentLevel.highScore.lowest.score%",
+        "then": { "name": "load", "file": "ui/gameOverHighScore.json" },
+        "else": { "name": "load", "file": "ui/gameOver.json" }
+      }
+    }
+  ]
+}

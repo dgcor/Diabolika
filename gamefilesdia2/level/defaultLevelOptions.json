@@ -1,0 +1,192 @@
+{
+  "level": {
+    "id": "level",
+    "levels": [
+      {
+        "level": 1,
+        "insertUnits": [
+          { "id": "minorDemon", "count": 4 },
+          { "id": "majorDemon", "count": 0 },
+          { "id": "elderDemon", "count": 0 },
+          { "id": "sacrifice", "count": 1 }
+        ],
+        "queueUnits": [
+          "strawGolem",
+          "hydra",
+          "blueImp",
+          "purpleImp",
+          "flameToad",
+          "exploder",
+          "kannon",
+          "magikMissile"
+        ],
+        "maxUnitsByType": [
+          { "type": "sacrifice", "count": 1 }
+        ],
+        "units": 8,
+        "exploders": 2
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 5 },
+          { "id": "majorDemon", "count": 0 },
+          { "id": "elderDemon", "count": 0 },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 4 },
+          { "id": "majorDemon", "count": 1 },
+          { "id": "elderDemon", "count": 0 },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 3 },
+          { "id": "majorDemon", "count": 2 },
+          { "id": "elderDemon", "count": 0 },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 4 },
+          { "id": "majorDemon", "count": 2 },
+          { "id": "elderDemon", "count": 0 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.2)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 3 },
+          { "id": "majorDemon", "count": 3 },
+          { "id": "elderDemon", "count": 0 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.7)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 4 },
+          { "id": "majorDemon", "count": 0 },
+          { "id": "elderDemon", "count": 1 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.7)" },
+          { "id": "sacrifice", "count": 1 }
+        ],
+        "units": 10
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 4 },
+          { "id": "majorDemon", "count": 2 },
+          { "id": "elderDemon", "count": 0 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.7)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 3 },
+          { "id": "majorDemon", "count": 1 },
+          { "id": "elderDemon", "count": 1 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.7)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 4 },
+          { "id": "majorDemon", "count": 1 },
+          { "id": "elderDemon", "count": 1 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.8)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 3 },
+          { "id": "majorDemon", "count": 2 },
+          { "id": "elderDemon", "count": 1 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.8)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 4 },
+          { "id": "majorDemon", "count": 2 },
+          { "id": "elderDemon", "count": 1 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.8)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 4 },
+          { "id": "majorDemon", "count": 2 },
+          { "id": "elderDemon", "count": 1 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.8)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 4 },
+          { "id": "majorDemon", "count": 2 },
+          { "id": "elderDemon", "count": 2 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.8)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 5 },
+          { "id": "majorDemon", "count": 2 },
+          { "id": "elderDemon", "count": 2 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.8)" },
+          { "id": "sacrifice", "count": 1 }
+        ],
+        "units": 12
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 5 },
+          { "id": "majorDemon", "count": 3 },
+          { "id": "elderDemon", "count": 2 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.8)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 5 },
+          { "id": "majorDemon", "count": 3 },
+          { "id": "elderDemon", "count": 2 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.8)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 5 },
+          { "id": "majorDemon", "count": 3 },
+          { "id": "elderDemon", "count": 3 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.85)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      },
+      {
+        "insertUnits": [
+          { "id": "minorDemon", "count": 6 },
+          { "id": "majorDemon", "count": 3 },
+          { "id": "elderDemon", "count": 3 },
+          { "id": "mandrake", "count": ":ceil(:rndf(1)-0.85)" },
+          { "id": "sacrifice", "count": 1 }
+        ]
+      }
+    ]
+  }
+}

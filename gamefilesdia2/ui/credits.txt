@@ -1,0 +1,21 @@
+A Game Created By:
+Derek Yu
+
+Music By:
+David Saulesco
+
+Beta Testing By:
+Andrew 'Astrospoon' Hull
+Christopher 'Doompuppet' Wolf
+Tryggve 'Yetipants' Sollid
+John 'Spooter' Ryan
+'DN' Mark Thomas
+
+Original Concept:
+Derek Yu and Jonathan Perry
+
+Programmed with:
+The Allegro Game Programming Library (original)
+DGEngine core (this version)
+
+(c)2003 Blackeye Software

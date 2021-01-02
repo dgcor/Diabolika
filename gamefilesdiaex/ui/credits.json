@@ -1,0 +1,32 @@
+{
+  "action": {
+    "name": "resource.add",
+    "id": "credits"
+  },
+  "replaceVars": "value",
+  "image": {
+    "id": "title",
+    "texture": "title",
+    "position": ["|$.#scale * 192|", "|$.#scale * 2|"],
+    "anchor": "none"
+  },
+  "text": [
+    {
+      "id": "creditsEx",
+      "font": "font",
+      "color": "0x28BAFF",
+      "position": ["|$.#scale * 415|", "|$.#scale * 105|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "text": "Extended"
+    },
+    {
+      "id": "credits",
+      "font": "font",
+      "position": ["|$.#scale * 415|", "|$.#scale * 145|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "file": "ui/credits.txt"
+    }
+  ]
+}

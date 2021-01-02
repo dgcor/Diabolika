@@ -1,0 +1,35 @@
+/*.cbp
+/*.db
+/*.depend
+/*.dll
+/*.exe
+/*.layout
+/*.opendb
+/*.vcxproj.filters
+/*.vcxproj.user
+/*.zip
+/.svn
+/.vs
+/bin
+/CMakeCache.txt
+/CMakeFiles
+/cmake_install.cmake
+/Debug
+/Debug Clang
+/Debug Code Analysis
+/Debug NoMovie
+/Diabolika
+/gamefilesdia2/bgm
+/gamefilesdia2/gfx
+/gamefilesdia2/gfx2x
+/gamefilesdia2/res/icon.png
+/gamefilesdia2/sfx
+/Makefile
+/obj
+/portable
+/Project.dir
+/Release
+/Release NoMovie
+/Release Static
+/Release Static NoMovie
+/x64

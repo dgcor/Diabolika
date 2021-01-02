@@ -1,0 +1,60 @@
+{
+  "load": "ui/help/helpPanel.json",
+  "replaceVars": "value",
+  "button": {
+    "id": "default",
+    "texture": "empty",
+    "textureRect": ["|$.#scale * 448|", "|$.#scale * 480|"],
+    "position": ["|$.#scale * 192|", 0],
+    "anchor": "all",
+    "onClick": [
+      { "name": "resource.pop", "id": "popup" },
+      { "name": "load", "file": "ui/help/help6.json" }
+    ]
+  },
+  "image": [
+    {
+      "id": "sacrifice",
+      "texturePack": "sacrifice",
+      "position": ["|$.#scale * 224|", "|$.#scale * 135|"],
+      "anchor": "none"
+    },
+    {
+      "id": "mandrake",
+      "texturePack": "mandrake",
+      "position": ["|$.#scale * 224|", "|$.#scale * 263|"],
+      "anchor": "none"
+    }
+  ],
+  "text": [
+    {
+      "id": "txtHelp1",
+      "font": "font",
+      "position": ["|$.#scale * 415|", "|$.#scale * 32|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "text": "Bonuses"
+    },
+    {
+      "id": "txtHelp2",
+      "font": "font",
+      "position": ["|$.#scale * 224|", "|$.#scale * 64|"],
+      "anchor": "none",
+      "file": "ui/help/help5.txt"
+    },
+    {
+      "id": "txtHelp3",
+      "font": "font",
+      "position": ["|$.#scale * 289|", "|$.#scale * 135|"],
+      "anchor": "none",
+      "file": "ui/help/help5-1.txt"
+    },
+    {
+      "id": "txtHelp4",
+      "font": "font",
+      "position": ["|$.#scale * 289|", "|$.#scale * 263|"],
+      "anchor": "none",
+      "file": "ui/help/help5-2.txt"
+    }
+  ]
+}

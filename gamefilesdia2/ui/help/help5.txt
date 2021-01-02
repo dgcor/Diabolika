@@ -1,0 +1,3 @@
+Bonuses appear on the board during the Regen-
+eration phase, but there can only be one on
+the board at any given time.

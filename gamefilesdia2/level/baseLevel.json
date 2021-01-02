@@ -1,0 +1,19 @@
+{
+  "replaceVars": "value",
+  "level": {
+    "id": "level",
+    "tilesTexturePack": "tile",
+    "explodeCursorTexturePack": "explodeCursor",
+    "explodePatternTexturePack": "explodePattern",
+    "explosionTexturePack": "explosion",
+    "position": ["|$.#scale * 192|", "|$.#scale * 32|"],
+    "padding": ["|$.#scale * 32|", "|$.#scale * 32|", "|$.#scale * 32|", "|$.#scale * 32|"],
+    "anchor": "none",
+    "onLeftClick": "makeMove",
+    "onRightClick": "rotateSelectedUnit",
+    "onNewRound": "playSoundRegen",
+    "onExplosion": "playSoundExplode",
+    "onGameOver": "gameOver",
+    "scoreFormula": "points * ($chain :max 1)"
+  }
+}

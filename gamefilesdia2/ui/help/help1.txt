@@ -1,0 +1,24 @@
+Diabolika is a grid-based puzzle game where you
+must fight off a Dark Horde of demons with an
+array of explosive and magickal devices.
+
+The game progresses through a series of rounds,
+during which you pick and place your units on the
+game board. When a unit explodes, it can explode
+other units around it. Try to arrange your units
+in such a way that they make a chain reaction.
+That is the best way to destroy the most demons
+each round.
+
+The three skulls on the left display the status
+of your game. From left to right, they are: the
+number of units available for the current round,
+the number of detonators available for the current
+round, and the number of demons alive on the board.
+
+Below the skulls is where your available units
+sit. Once you pick a unit and place it on the
+board, another takes its place on the left. You
+always have three units available.
+
+Below that your score is displayed.

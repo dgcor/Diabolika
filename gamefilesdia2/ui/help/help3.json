@@ -1,0 +1,111 @@
+{
+  "load": "ui/help/helpPanel.json",
+  "replaceVars": "value",
+  "button": {
+    "id": "default",
+    "texture": "empty",
+    "textureRect": ["|$.#scale * 448|", "|$.#scale * 480|"],
+    "position": ["|$.#scale * 192|", 0],
+    "anchor": "all",
+    "onClick": [
+      { "name": "resource.pop", "id": "popup" },
+      { "name": "load", "file": "ui/help/help4.json" }
+    ]
+  },
+  "image": [
+    {
+      "id": "strawGolem",
+      "texturePack": "strawGolem",
+      "position": ["|$.#scale * 224|", "|$.#scale * 52|"],
+      "anchor": "none"
+    },
+    {
+      "id": "strawGolemExplosion",
+      "texturePack": "explode",
+      "position": ["|$.#scale * 288|", "|$.#scale * 62|"],
+      "anchor": "none"
+    },
+    {
+      "id": "hydra",
+      "texturePack": "hydra",
+      "position": ["|$.#scale * 224|", "|$.#scale * 116|"],
+      "anchor": "none"
+    },
+    {
+      "id": "hydraExplosion",
+      "texturePack": "explode",
+      "textureIndex": 1,
+      "position": ["|$.#scale * 288|", "|$.#scale * 126|"],
+      "anchor": "none"
+    },
+    {
+      "id": "blueImp",
+      "texturePack": "blueImp",
+      "position": ["|$.#scale * 224|", "|$.#scale * 180|"],
+      "anchor": "none"
+    },
+    {
+      "id": "blueImpExplosion",
+      "texturePack": "explode",
+      "textureIndex": 2,
+      "position": ["|$.#scale * 288|", "|$.#scale * 190|"],
+      "anchor": "none"
+    },
+    {
+      "id": "purpleImp",
+      "texturePack": "purpleImp",
+      "position": ["|$.#scale * 224|", "|$.#scale * 244|"],
+      "anchor": "none"
+    },
+    {
+      "id": "purpleImpExplosion",
+      "texturePack": "explode",
+      "textureIndex": 3,
+      "position": ["|$.#scale * 288|", "|$.#scale * 254|"],
+      "anchor": "none"
+    },
+    {
+      "id": "flameToad",
+      "texturePack": "flameToad",
+      "position": ["|$.#scale * 224|", "|$.#scale * 308|"],
+      "anchor": "none"
+    },
+    {
+      "id": "flameToadExplosion",
+      "texturePack": "explode",
+      "textureIndex": 4,
+      "position": ["|$.#scale * 288|", "|$.#scale * 318|"],
+      "anchor": "none"
+    },
+    {
+      "id": "exploder",
+      "texturePack": "exploder",
+      "position": ["|$.#scale * 224|", "|$.#scale * 372|"],
+      "anchor": "none"
+    },
+    {
+      "id": "exploderExplosion",
+      "texturePack": "explode",
+      "textureIndex": 5,
+      "position": ["|$.#scale * 288|", "|$.#scale * 382|"],
+      "anchor": "none"
+    }
+  ],
+  "text": [
+    {
+      "id": "txtHelp1",
+      "font": "font",
+      "position": ["|$.#scale * 415|", "|$.#scale * 32|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "text": "Basic Units"
+    },
+    {
+      "id": "txtHelp2",
+      "font": "font",
+      "position": ["|$.#scale * 366|", "|$.#scale * 62|"],
+      "anchor": "none",
+      "file": "ui/help/help3.txt"
+    }
+  ]
+}

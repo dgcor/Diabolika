@@ -1,0 +1,5 @@
+The Mandrake is a special bonus that
+appears every now and then instead of
+a Sacrifice. Burning a Mandrake will
+give you the use of special units that
+don't appear normally on the sidebar.

@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "id": "gameover",
+    "file": "sfx/gameover.wav",
+    "play": true
+  },
+  "replaceVars": "value",
+  "image": {
+    "id": "title",
+    "texture": "background",
+    "textureRect": ["|$.#scale * 322|", "|$.#scale * 194|"],
+    "position": ["|$.#scale * 255|", "|$.#scale * 159|"],
+    "anchor": "none"
+  },
+  "text": [
+    {
+      "id": "gameOverTitle",
+      "font": "font",
+      "position": ["|$.#scale * 415|", "|$.#scale * 168|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "text": "Game Over"
+    },
+    {
+      "id": "gameOverText",
+      "font": "font",
+      "position": ["|$.#scale * 272|", "|$.#scale * 194|"],
+      "anchor": "none",
+      "file": "ui/gameOver.txt"
+    }
+  ]
+}

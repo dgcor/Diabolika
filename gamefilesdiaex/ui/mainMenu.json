@@ -1,0 +1,137 @@
+{
+  "action": {
+    "name": "resource.add",
+    "id": "mainMenu"
+  },
+  "inputEvent": [
+    {
+      "key": "f1",
+      "action": { "name": "load", "file": "ui/settings.json" }
+    },
+    {
+      "key": ["enter", " ", "p"],
+      "action": { "name": "button.click", "id": "new" }
+    },
+    {
+      "key": "esc",
+      "action": { "name": "button.click", "id": "quit" }
+    }
+  ],
+  "audio": {
+    "id": "main",
+    "file": "bgm/kyrie.ogg",
+    "loop": true,
+    "play": true
+  },
+  "image": {
+    "id": "side",
+    "texture": "side",
+    "anchor": "none"
+  },
+  "replaceVars": "value",
+  "button": [
+    {
+      "id": "btnBackground",
+      "texture": "empty",
+      "textureRect": ["|$.#scale * 640|", "|$.#scale * 480|"],
+      "anchor": "all",
+      "captureInputEvents": true,
+      "onClick": { "name": "button.click", "id": "default" }
+    },
+    {
+      "id": "help",
+      "texture": "empty",
+      "textureRect": [0, 0, "|$.#scale * 48|", "|$.#scale * 34|"],
+      "position": ["|$.#scale * 47|", 0],
+      "anchor": "none",
+      "onClick": [
+        { "name": "resource.pop", "id": "popup" },
+        { "name": "load", "file": "ui/help/help1.json" }
+      ],
+      "onHoverEnter": { "name": "image.setTexture", "id": "help", "texture": "buttons" },
+      "onHoverLeave": { "name": "image.setTexture", "id": "help", "texture": "empty" }
+    },
+    {
+      "id": "score",
+      "texture": "empty",
+      "textureRect": ["|$.#scale * 49|", 0, "|$.#scale * 48|", "|$.#scale * 34|"],
+      "position": ["|$.#scale * 96|", 0],
+      "anchor": "none",
+      "onClick": [
+        { "name": "resource.pop", "id": "popup" },
+        { "name": "load", "file": "ui/scores.json" }
+      ],
+      "onHoverEnter": { "name": "image.setTexture", "id": "score", "texture": "buttons" },
+      "onHoverLeave": { "name": "image.setTexture", "id": "score", "texture": "empty" }
+    },
+    {
+      "id": "new",
+      "texture": "empty",
+      "textureRect": [0, "|$.#scale * 35|", "|$.#scale * 48|", "|$.#scale * 30|"],
+      "position": ["|$.#scale * 47|", "|$.#scale * 35|"],
+      "anchor": "none",
+      "onClick": [
+        { "name": "resource.pop", "id": "credits" },
+        { "name": "resource.pop", "id": "play" },
+        { "name": "resource.pop", "id": "popup" },
+        { "name": "load", "file": "ui/play.json" }
+      ],
+      "onHoverEnter": { "name": "image.setTexture", "id": "new", "texture": "buttons" },
+      "onHoverLeave": { "name": "image.setTexture", "id": "new", "texture": "empty" }
+    },
+    {
+      "id": "quit",
+      "texture": "empty",
+      "textureRect": ["|$.#scale * 49|", "|$.#scale * 35|", "|$.#scale * 48|", "|$.#scale * 30|"],
+      "position": ["|$.#scale * 96|", "|$.#scale * 35|"],
+      "anchor": "none",
+      "onClick": {
+        "name": "game.fadeOut",
+        "action": {
+          "name": "game.close"
+        }
+      },
+      "onHoverEnter": { "name": "image.setTexture", "id": "quit", "texture": "buttons" },
+      "onHoverLeave": { "name": "image.setTexture", "id": "quit", "texture": "empty" }
+    }
+  ],
+  "text": [
+    {
+      "id": "txtUnits",
+      "font": "font",
+      "position": ["|$.#scale * 42|", "|$.#scale * 273|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "binding": "%level.units%",
+      "text": "0"
+    },
+    {
+      "id": "txtDetonators",
+      "font": "font",
+      "position": ["|$.#scale * 97|", "|$.#scale * 273|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "binding": "%level.detonators%",
+      "text": "0"
+    },
+    {
+      "id": "txtDemons",
+      "font": "font",
+      "position": ["|$.#scale * 152|", "|$.#scale * 273|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "binding": "%level.demons%",
+      "text": "0"
+    },
+    {
+      "id": "txtScore",
+      "font": "font",
+      "position": ["|$.#scale * 38|", "|$.#scale * 443|"],
+      "anchor": "none",
+      "binding": "%level.score%",
+      "text": "0"
+    }
+  ],
+  "load": "level/load.json",
+  "load": "ui/credits.json"
+}

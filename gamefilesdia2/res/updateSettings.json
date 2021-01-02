@@ -1,0 +1,48 @@
+{
+  "action": [
+    {
+      "name": "if.equal",
+      "param1": { "name": "file.exists", "file": "gfx/buttons.png" },
+      "param2": true,
+      "then": { "name": "variable.set", "key": "hasPNG", "value": true },
+      "else": { "name": "variable.set", "key": "hasPNG", "value": false }
+    },
+    {
+      "name": "if.equal",
+      "param1": { "name": "file.exists", "file": "gfx2x/buttons.png" },
+      "param2": false,
+      "then": { "name": "variable.set", "key": "scale", "value": 1 }
+    },
+    {
+      "name": "switch",
+      "param": "%scale%",
+      "case": [
+        {
+          "value": 2,
+          "action": {
+            "name": "loadJson",
+            "json": {
+              "refWindowSize": [1280, 960],
+              "minWindowSize": [1280, 960],
+              "windowSize": [1280, 960]
+            }
+          }
+        }
+      ],
+      "default": [
+        { "name": "variable.set", "key": "scale", "value": 1 },
+        {
+          "name": "loadJson",
+          "json": {
+            "refWindowSize": [640, 480],
+            "minWindowSize": [640, 480],
+            "windowSize": [640, 480]
+          }
+        }
+      ]
+    },
+    { "name": "variable.setIfNull", "key": "shader", "value": "default" }
+  ],
+  "replaceVars": "value",
+  "load": "res/shaders/|shader|.json"
+}
