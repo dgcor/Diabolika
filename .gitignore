@@ -20,7 +20,8 @@
 /Debug NoMovie
 /Diabolika
 /gamefilesdia2/bgm
-/gamefilesdia2/gfx
+/gamefilesdia2/gfx/*
+!/gamefilesdia2/gfx/font.png
 /gamefilesdia2/gfx2x
 /gamefilesdia2/res/icon.png
 /gamefilesdia2/sfx
