@@ -1,9 +1,9 @@
 #include "UnitClass.h"
 
-UnitClass::UnitClass(const TexturePackVariant& texturePackVar_,
-	const TexturePackVariant& explosionTexturePackVar_,
-	uint32_t directions_) : texturePackVar(texturePackVar_),
-	explosionTexturePackVar(explosionTexturePackVar_), directions(directions_)
+UnitClass::UnitClass(const std::shared_ptr<TexturePack>& texturePack_,
+	const std::shared_ptr<TexturePack>& explosionTexturePack_,
+	uint32_t directions_) : texturePack(texturePack_),
+	explosionTexturePack(explosionTexturePack_), directions(directions_)
 {
 }
 

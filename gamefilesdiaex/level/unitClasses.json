@@ -100,7 +100,7 @@
       "id": "kannon",
       "type": "exploder",
       "texturePack": "kannon",
-      "explosionCompositeTexture": "explosionkannon",
+      "explosionTexturePack": "explosionkannon",
       "points": 20,
       "directions": 4,
       "explodePattern": [
@@ -116,7 +116,7 @@
       "id": "magikMissile",
       "type": "exploder",
       "texturePack": "magikMissile",
-      "explosionCompositeTexture": "explosionMissile",
+      "explosionTexturePack": "explosionMissile",
       "points": 20,
       "links": "missileTarget",
       "linkType": "unidirectional",

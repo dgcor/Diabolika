@@ -1,18 +1,18 @@
 #pragma once
 
 #include "Actions/Action.h"
-#include "CompositeTexture.h"
 #include "Formula.h"
 #include "GameProperties.h"
 #include <string>
+#include "TexturePacks/TexturePack.h"
 #include "Utils/PairXY.h"
 #include <vector>
 
 class UnitClass
 {
 private:
-	TexturePackVariant texturePackVar;
-	TexturePackVariant explosionTexturePackVar;
+	std::shared_ptr<TexturePack> texturePack;
+	std::shared_ptr<TexturePack> explosionTexturePack;
 	uint32_t directions{ 0 };
 	int32_t points{ 0 };
 
@@ -35,12 +35,12 @@ private:
 	std::shared_ptr<Action> destroyAction;
 
 public:
-	UnitClass(const TexturePackVariant& texturePackVar_,
-		const TexturePackVariant& explosionTexturePackVar_,
+	UnitClass(const std::shared_ptr<TexturePack>& texturePackVar_,
+		const std::shared_ptr<TexturePack>& explosionTexturePackVar_,
 		uint32_t directions_);
 
-	const TexturePackVariant& getTexturePack() const noexcept { return texturePackVar; }
-	const TexturePackVariant& getExplosionTexturePack() const noexcept { return explosionTexturePackVar; }
+	const std::shared_ptr<TexturePack>& getTexturePack() const noexcept { return texturePack; }
+	const std::shared_ptr<TexturePack>& getExplosionTexturePack() const noexcept { return explosionTexturePack; }
 
 	const std::string& Id() const noexcept { return id; }
 	const std::string& Type() const noexcept { return type; }
