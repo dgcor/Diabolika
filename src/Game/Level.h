@@ -68,7 +68,7 @@ private:
 	std::shared_ptr<TexturePack> tilesTexturePack;
 	std::shared_ptr<TexturePack> explodeCursorTexturePack;
 	std::shared_ptr<TexturePack> explodePatternTexturePack;
-	TexturePackVariant explosionTexturePackVar;
+	std::shared_ptr<TexturePack> explosionTexturePack;
 
 	float tileSize{ 0 };
 
@@ -136,7 +136,7 @@ private:
 
 	void addExplosionAnim(Animation& anim);
 	void addExplosionAnim(Animation& anim,
-		const TexturePackVariant& texturePackVar, uint32_t direction);
+		const std::shared_ptr<TexturePack>& texturePackVar, uint32_t direction);
 	void setTileAnimationPosition(Animation& anim, PairInt16 mapPos) const;
 	void updateSelectedTile(Game& game);
 	void updateSelectedTileAnimation(Game& game);
@@ -161,7 +161,7 @@ public:
 	void Init(const std::shared_ptr<TexturePack>& tilesTexturePack_,
 		const std::shared_ptr<TexturePack>& explodeCursorTexturePack_,
 		const std::shared_ptr<TexturePack>& explodePatternTexturePack_,
-		const TexturePackVariant& explosionTexturePackVar_,
+		const std::shared_ptr<TexturePack>& explosionTexturePack_,
 		float tileSize_, const sf::IntRect& padding_);
 
 	void setShader(GameShader* shader) noexcept { gameShader = shader; }

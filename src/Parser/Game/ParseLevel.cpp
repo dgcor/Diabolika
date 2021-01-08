@@ -191,31 +191,14 @@ namespace Parser
 		auto tiles = game.Resources().getTexturePack(getStringViewKey(elem, "tilesTexturePack"));
 		auto explodeCursor = game.Resources().getTexturePack(getStringViewKey(elem, "explodeCursorTexturePack"));
 		auto explodePattern = game.Resources().getTexturePack(getStringViewKey(elem, "explodePatternTexturePack"));
-
-		TexturePackVariant explosionVar;
-		if (isValidString(elem, "explosionTexturePack") == true)
-		{
-			auto obj = game.Resources().getTexturePack(elem["explosionTexturePack"sv].GetStringView());
-			if (obj != nullptr)
-			{
-				explosionVar = std::move(obj);
-			}
-		}
-		else if (isValidString(elem, "explosionCompositeTexture") == true)
-		{
-			auto obj = game.Resources().getCompositeTexture(elem["explosionCompositeTexture"sv].GetStringView());
-			if (obj != nullptr)
-			{
-				explosionVar = std::move(obj);
-			}
-		}
+		auto explosion = game.Resources().getTexturePack(getStringViewKey(elem, "explosionTexturePack"));
 
 		bool initLevel = getBoolKey(elem, "init");
 		if (initLevel == false &&
 			tiles == nullptr &&
 			explodeCursor == nullptr &&
 			explodePattern == nullptr &&
-			explosionVar.holdsNullTexturePack() == true)
+			explosion == nullptr)
 		{
 			return;
 		}
@@ -223,6 +206,6 @@ namespace Parser
 		auto tileSize = (float)getUIntKey(elem, "tileSize");
 		auto padding = getIntRectKey(elem, "padding");
 
-		level->Init(tiles, explodeCursor, explodePattern, explosionVar, tileSize, padding);
+		level->Init(tiles, explodeCursor, explodePattern, explosion, tileSize, padding);
 	}
 }

@@ -8,13 +8,13 @@ static LevelOptions defaultOptions;
 void Level::Init(const std::shared_ptr<TexturePack>& tilesTexturePack_,
 	const std::shared_ptr<TexturePack>& explodeCursorTexturePack_,
 	const std::shared_ptr<TexturePack>& explodePatternTexturePack_,
-	const TexturePackVariant& explosionTexturePackVar_,
+	const std::shared_ptr<TexturePack>& explosionTexturePack_,
 	float tileSize_, const sf::IntRect& padding_)
 {
 	tilesTexturePack = tilesTexturePack_;
 	explodeCursorTexturePack = explodeCursorTexturePack_;
 	explodePatternTexturePack = explodePatternTexturePack_;
-	explosionTexturePackVar = explosionTexturePackVar_;
+	explosionTexturePack = explosionTexturePack_;
 
 	if (tileSize_ > 0.f)
 	{
@@ -518,27 +518,19 @@ Level::LevelCell& Level::get(PairInt16 mapPos)
 
 void Level::addExplosionAnim(Animation& anim)
 {
-	addExplosionAnim(anim, explosionTexturePackVar, 0);
+	addExplosionAnim(anim, explosionTexturePack, 0);
 }
 
 void Level::addExplosionAnim(Animation& anim,
-	const TexturePackVariant& texturePackVar, uint32_t direction)
+	const std::shared_ptr<TexturePack>& texturePack, uint32_t direction)
 {
-	AnimationInfo animInfo;
-	if (texturePackVar.holdsTexturePack() == true)
-	{
-		animInfo = texturePackVar.getTexturePack()->getAnimation(0, direction);
-	}
-	else if (texturePackVar.holdsCompositeTexture() == true)
-	{
-		animInfo = texturePackVar.getCompositeTexture()->getAnimation(0, direction);
-	}
+	auto animInfo = texturePack->getAnimation(0, direction);
 	animInfo.animType = AnimationType::PlayOnce;
 	if (animInfo.refresh == sf::Time::Zero)
 	{
 		animInfo.refresh = sf::milliseconds(50);
 	}
-	anim.setAnimation(texturePackVar, animInfo);
+	anim.setAnimation(texturePack, animInfo);
 	anim.Visible(true);
 }
 
@@ -626,7 +618,7 @@ void Level::updateSelectedTileAnimation(Game& game)
 	{
 		if (explodeCursorTexturePack != nullptr)
 		{
-			if (selectedTileAnim.holdsTexturePack(explodeCursorTexturePack) == false)
+			if (selectedTileAnim.getTexturePack() != explodeCursorTexturePack)
 			{
 				selectedTileAnim.setAnimation(explodeCursorTexturePack, 0, 0, true, true);
 			}
@@ -1005,9 +997,9 @@ void Level::processExplosions(Game& game)
 		if (cell.unit != nullptr)
 		{
 			auto unitExplTexPack = cell.unit->Class()->getExplosionTexturePack();
-			if (unitExplTexPack.holdsNullTexturePack() == true)
+			if (unitExplTexPack == nullptr)
 			{
-				unitExplTexPack = explosionTexturePackVar;
+				unitExplTexPack = explosionTexturePack;
 			}
 			addExplosionAnim(cell.anim, unitExplTexPack, cell.unit->Direction());
 			cell.unit->explode(game, *this, newExplosions);

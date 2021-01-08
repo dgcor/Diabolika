@@ -61,48 +61,15 @@ namespace Parser
 			return;
 		}
 
-		TexturePackVariant texturePackVar;
-		if (isValidString(elem, "texturePack") == true)
-		{
-			auto obj = game.Resources().getTexturePack(elem["texturePack"sv].GetStringView());
-			if (obj != nullptr)
-			{
-				texturePackVar = std::move(obj);
-			}
-		}
-		else if (isValidString(elem, "compositeTexture") == true)
-		{
-			auto obj = game.Resources().getCompositeTexture(elem["compositeTexture"sv].GetStringView());
-			if (obj != nullptr)
-			{
-				texturePackVar = std::move(obj);
-			}
-		}
-		if (texturePackVar.holdsNullTexturePack() == true)
+		auto texturePack = game.Resources().getTexturePack(getStringViewKey(elem, "texturePack"));
+		if (texturePack == nullptr)
 		{
 			return;
 		}
-
-		TexturePackVariant explosionTexturePackVar;
-		if (isValidString(elem, "explosionTexturePack") == true)
-		{
-			auto obj = game.Resources().getTexturePack(elem["explosionTexturePack"sv].GetStringView());
-			if (obj != nullptr)
-			{
-				explosionTexturePackVar = std::move(obj);
-			}
-		}
-		else if (isValidString(elem, "explosionCompositeTexture") == true)
-		{
-			auto obj = game.Resources().getCompositeTexture(elem["explosionCompositeTexture"sv].GetStringView());
-			if (obj != nullptr)
-			{
-				explosionTexturePackVar = std::move(obj);
-			}
-		}
+		auto explosionTexturePack = game.Resources().getTexturePack(getStringViewKey(elem, "explosionTexturePack"));
 
 		auto directions = getUIntKey(elem, "directions");
-		auto unitClass = std::make_shared<UnitClass>(texturePackVar, explosionTexturePackVar, directions);
+		auto unitClass = std::make_shared<UnitClass>(texturePack, explosionTexturePack, directions);
 
 		unitClass->Points(getIntKey(elem, "points"));
 		unitClass->Id(id);

@@ -7,20 +7,13 @@ Unit::Unit(const UnitClass* class__, PairInt16 mapPosition_, uint32_t direction_
 	: class_(class__), mapPosition(mapPosition_), direction(direction_)
 {
 	AnimationInfo animInfo;
-	const auto& texturePackVar = class__->getTexturePack();
-	if (texturePackVar.holdsTexturePack() == true)
-	{
-		animInfo = texturePackVar.getTexturePack()->getAnimation(0, direction_);
-	}
-	else if (texturePackVar.holdsCompositeTexture() == true)
-	{
-		animInfo = texturePackVar.getCompositeTexture()->getAnimation(0, direction_);
-	}
+	const auto& texturePack = class__->getTexturePack();
+	animInfo = texturePack->getAnimation(0, direction_);
 	if (animInfo.refresh == sf::Time::Zero)
 	{
 		animInfo.refresh = sf::milliseconds(50);
 	}
-	setAnimation(texturePackVar, animInfo);
+	setAnimation(texturePack, animInfo);
 	points = class_->Points();
 }
 
@@ -283,29 +276,12 @@ void Unit::explode(Game& game, Level& level, std::vector<PairInt16>& newExplosio
 
 bool Unit::getTexture(uint32_t textureNumber, TextureInfo& ti) const
 {
-	const auto& texturePackVar = class_->getTexturePack();
-	if (texturePackVar.holdsTexturePack() == true)
+	const auto& texturePack = class_->getTexturePack();
+	auto directions = texturePack->getDirectionCount(0);
+	if (textureNumber < directions)
 	{
-		auto directions = texturePackVar.getTexturePack()->getDirectionCount(0);
-		if (textureNumber < directions)
-		{
-			auto idx = texturePackVar.getTexturePack()->getAnimation(0, textureNumber).indexRange.first;
-			return texturePackVar.getTexturePack()->get(idx, ti);
-		}
-	}
-	else if (texturePackVar.holdsCompositeTexture() == true)
-	{
-		auto directions = texturePackVar.getCompositeTexture()->getDirectionCount(0);
-		if (textureNumber < directions)
-		{
-			auto idx = texturePackVar.getCompositeTexture()->getAnimation(0, textureNumber).indexRange.first;
-			std::vector<TextureInfo> tiVec;
-			if (texturePackVar.getCompositeTexture()->get(idx, tiVec) == true)
-			{
-				ti = tiVec.back();
-				return true;
-			}
-		}
+		auto idx = texturePack->getAnimation(0, textureNumber).indexRange.first;
+		return texturePack->get(idx, ti);
 	}
 	return false;
 }

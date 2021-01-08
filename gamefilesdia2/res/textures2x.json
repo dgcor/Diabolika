@@ -319,7 +319,7 @@
       ]
     },
     {
-      "id": "explosionMissile",
+      "id": "explosionMissilet",
       "texture": "fx",
       "rects": [
         { "rect": [0, 256, 64, 128] },
@@ -362,7 +362,7 @@
       ]
     },
     {
-      "id": "explosionkannon",
+      "id": "explosionkannont",
       "texture": "fx",
       "directions": 4,
       "rects": [
@@ -602,20 +602,20 @@
         [149, 5],
         [150, 6]
       ]
-    }
-  ],
-  "compositeTexture": [
+    },
     {
       "id": "explosionMissile",
+      "type": "composite",
       "texturePacks": [
-        "explosionMissile",
+        "explosionMissilet",
         "explosion"
       ]
     },
     {
       "id": "explosionkannon",
+      "type": "composite",
       "texturePacks": [
-        "explosionkannon",
+        "explosionkannont",
         "explosionkannonFire"
       ]
     }
