@@ -19,6 +19,7 @@
 /Debug Code Analysis
 /Debug NoMovie
 /Diabolika
+/Diabolika.dir
 /gamefilesdia2/bgm
 /gamefilesdia2/gfx/*
 !/gamefilesdia2/gfx/font.png
@@ -28,7 +29,6 @@
 /Makefile
 /obj
 /portable
-/Project.dir
 /Release
 /Release NoMovie
 /Release Static

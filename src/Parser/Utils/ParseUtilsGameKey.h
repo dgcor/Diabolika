@@ -1,6 +1,7 @@
 #pragma once
 
-#include "ParseUtilsGameVal.h"
+#include "Game/GameProperties.h"
+#include "ParseUtilsGame.h"
 #include <string_view>
 
 namespace Parser

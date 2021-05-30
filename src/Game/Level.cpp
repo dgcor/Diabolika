@@ -483,12 +483,6 @@ const Queryable* Level::getQueryable(const std::string_view prop) const
 	return queryable;
 }
 
-std::vector<std::variant<const Queryable*, Variable>> Level::getQueryableList(
-	const std::string_view prop) const
-{
-	return {};
-}
-
 sf::Vector2f Level::toDrawCoord(int16_t x, int16_t y) const
 {
 	return { padding.left + (tileSize * x), padding.top + (tileSize * y) };

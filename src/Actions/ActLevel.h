@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Action.h"
+#include "Actions/Action.h"
 #include "Game.h"
 #include "GameUtils.h"
 #include "Game/Level.h"
@@ -22,7 +22,7 @@ public:
 
 	bool execute(Game& game) override
 	{
-		auto level = game.Resources().getLevel(id);
+		auto level = game.Resources().getLevel<Level>(id);
 		if (level != nullptr)
 		{
 			level->addHighScore(levelScore);
@@ -41,7 +41,7 @@ public:
 
 	bool execute(Game& game) override
 	{
-		auto level = game.Resources().getLevel(id);
+		auto level = game.Resources().getLevel<Level>(id);
 		if (level != nullptr)
 		{
 			level->makeMove(game);
@@ -62,7 +62,7 @@ public:
 
 	bool execute(Game& game) override
 	{
-		auto level = game.Resources().getLevel(id);
+		auto level = game.Resources().getLevel<Level>(id);
 		if (level != nullptr)
 		{
 			level->moveSelectedTile(game, offset);
@@ -81,7 +81,7 @@ public:
 
 	bool execute(Game& game) override
 	{
-		auto level = game.Resources().getLevel(id);
+		auto level = game.Resources().getLevel<Level>(id);
 		if (level != nullptr)
 		{
 			level->newGame(game);
@@ -101,7 +101,7 @@ public:
 
 	bool execute(Game& game) noexcept override
 	{
-		auto level = game.Resources().getLevel(id);
+		auto level = game.Resources().getLevel<Level>(id);
 		if (level != nullptr)
 		{
 			level->Pause(pause);
@@ -122,7 +122,7 @@ public:
 
 	bool execute(Game& game) override
 	{
-		auto level = game.Resources().getLevel(id);
+		auto level = game.Resources().getLevel<Level>(id);
 		if (level != nullptr)
 		{
 			level->queueUnit(unit);
@@ -141,32 +141,10 @@ public:
 
 	bool execute(Game& game) override
 	{
-		auto level = game.Resources().getLevel(id);
+		auto level = game.Resources().getLevel<Level>(id);
 		if (level != nullptr)
 		{
 			level->rotateSelectedUnit();
-		}
-		return true;
-	}
-};
-
-class ActLevelSave : public Action
-{
-private:
-	std::string id;
-	std::string file;
-	Save::Properties props;
-
-public:
-	ActLevelSave(const std::string_view id_, const std::string_view file_,
-		Save::Properties&& props_) : id(id_), file(file_), props(std::move(props_)) {}
-
-	bool execute(Game& game) noexcept override
-	{
-		auto level = game.Resources().getLevel(id);
-		if (level != nullptr)
-		{
-			level->save(GameUtils::replaceStringWithVarOrProp(file, game), props, game);
 		}
 		return true;
 	}
@@ -184,7 +162,7 @@ public:
 
 	bool execute(Game& game) override
 	{
-		auto level = game.Resources().getLevel(id);
+		auto level = game.Resources().getLevel<Level>(id);
 		if (level != nullptr)
 		{
 			level->selectUnitQueue(queue);
@@ -205,7 +183,7 @@ public:
 
 	bool execute(Game& game) override
 	{
-		auto level = game.Resources().getLevel(id);
+		auto level = game.Resources().getLevel<Level>(id);
 		if (level != nullptr)
 		{
 			level->selectTile(game, position);
@@ -226,7 +204,7 @@ public:
 
 	bool execute(Game& game) override
 	{
-		auto level = game.Resources().getLevel(id);
+		auto level = game.Resources().getLevel<Level>(id);
 		if (level != nullptr)
 		{
 			auto shader = game.Resources().Shaders().get(idShader);

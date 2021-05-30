@@ -72,7 +72,7 @@ jobs:
     - name: MSBuild Diabolika
       run: |
         vcpkg integrate install
-        msbuild Project.vcxproj /p:Configuration="Release Static NoMovie" /p:Platform=Win32
+        msbuild Diabolika.vcxproj /p:Configuration="Release Static NoMovie" /p:Platform=Win32
 
     - name: Create Diabolika.zip
       run: 7z a Diabolika.zip "./Release Static NoMovie/*.exe" LICENSE.* README.* main.json gamefiles*
