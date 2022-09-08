@@ -50,6 +50,6 @@ See how to build in [BUILD.txt](BUILD.txt).
 
 ### Getting original assets
 
-Clone this repository, go to `Actions` and manually run the `Package_gamefiles` workflow.  
+Fork this repository, go to `Actions` and manually run the `Package_gamefiles` workflow.  
 An artifact (`gamefilesdia2.zip`) will be created with the original assets.  
 Extract that archive over the `gamefilesdia2` folder or delete the `gamefilesdia2` folder (Diabolika will use the zip instead).
