@@ -1,17 +1,28 @@
 {
-  "title" : "Diabolika Extended",
-  "version": "1.0",
-  "saveDir": ".diabolikaex",
-  "refWindowSize": [640, 480],
-  "minWindowSize": [640, 480],
-  "windowSize": [640, 480],
-  "framerate": 60,
-  "keepAR": true,
-  "stretchToFit": true,
-  "smoothScreen": true,
   "mountFile": { "file": "gamefilesdia2" },
-  "load": "settings.json",
-  "load": "res/updateSettings.json",
-  "init": true,
-  "action": { "name": "load", "file": "ui/loadMain.json" }
+  "game": {
+    "title" : "Diabolika Extended",
+    "version": "1.0",
+    "saveDir": ".diabolikaex",
+    "refSize": [640, 480],
+    "minSize": [640, 480],
+    "size": [640, 480],
+    "frameRate": 60,
+    "keepAR": true,
+    "stretchToFit": true,
+    "smoothScreen": true,
+    "load": "settings.json",
+    "load": "res/updateSettings.json",
+    "init": true
+  },
+  "action": {
+    "name": "if",
+    "params": [
+      { "name": "file.exists", "file": "gfx/buttons.bmp" }, "==", true,
+      "or",
+      { "name": "file.exists", "file": "gfx/buttons.png" }, "==", true
+    ],
+    "then": { "name": "load", "file": "ui/loadMain.json" },
+    "else": { "name": "load", "file": "ui/dataMissing.json" }
+  }
 }

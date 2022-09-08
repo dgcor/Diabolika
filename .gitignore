@@ -1,3 +1,6 @@
+!.vscode/launch.json
+.vscode/*
+/*.AppImage
 /*.cbp
 /*.db
 /*.depend
@@ -20,14 +23,15 @@
 /Debug NoMovie
 /Diabolika
 /Diabolika.dir
-/gamefilesdia2/bgm
+/gamefilesdia2/bgm/*.mid
+/gamefilesdia2/bgm/*.ogg
 /gamefilesdia2/gfx/*
 !/gamefilesdia2/gfx/font.png
 /gamefilesdia2/gfx2x
-/gamefilesdia2/res/icon.png
 /gamefilesdia2/sfx
 /Makefile
 /obj
+/out
 /portable
 /Release
 /Release NoMovie

@@ -1,0 +1,12 @@
+{
+  "inputEvent": [
+    {
+      "gameInputEvent": "settings",
+      "action": { "name": "load", "file": "ui/settings.json" }
+    },
+    {
+      "gameInputEvent": "esc",
+      "action": { "name": "button.click", "id": "quit" }
+    }
+  ]
+}

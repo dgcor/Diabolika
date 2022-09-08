@@ -5,7 +5,7 @@
     "play": true
   },
   "inputEvent": {
-    "key": "enter",
+    "gameInputEvent": "enter",
     "action": { "name": "button.click", "id": "highScoreOK" }
   },
   "replaceVars": "value",

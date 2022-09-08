@@ -1,16 +1,27 @@
 {
-  "title" : "Diabolika 2",
-  "version": "1.0",
-  "saveDir": ".diabolika2",
-  "refWindowSize": [640, 480],
-  "minWindowSize": [640, 480],
-  "windowSize": [640, 480],
-  "framerate": 60,
-  "keepAR": true,
-  "stretchToFit": true,
-  "smoothScreen": true,
-  "load": "settings.json",
-  "load": "res/updateSettings.json",
-  "init": true,
-  "action": { "name": "load", "file": "ui/loadMain.json" }
+  "game": {
+    "title" : "Diabolika 2",
+    "version": "1.0",
+    "saveDir": ".diabolika2",
+    "refSize": [640, 480],
+    "minSize": [640, 480],
+    "size": [640, 480],
+    "frameRate": 60,
+    "keepAR": true,
+    "stretchToFit": true,
+    "smoothScreen": true,
+    "load": "settings.json",
+    "load": "res/updateSettings.json",
+    "init": true
+  },
+  "action": {
+    "name": "if",
+    "params": [
+      { "name": "file.exists", "file": "gfx/buttons.bmp" }, "==", true,
+      "or",
+      { "name": "file.exists", "file": "gfx/buttons.png" }, "==", true
+    ],
+    "then": { "name": "load", "file": "ui/loadMain.json" },
+    "else": { "name": "load", "file": "ui/dataMissing.json" }
+  }
 }

@@ -1,0 +1,22 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "name": "Diabolika 2",
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "",
+      "currentDir": ".",
+      "args": [ "gamefilesdia2" ]
+    },
+    {
+      "name": "Diabolika Extended",
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "",
+      "currentDir": ".",
+      "args": [ "gamefilesdiaex" ]
+    }
+  ]
+}

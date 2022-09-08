@@ -1,0 +1,17 @@
+{
+  "gameInputEvent": [
+    { "name": "enter", "key": "enter" },
+    { "name": "space", "key": " "},
+    { "name": "esc", "key": "esc" },
+    { "name": "settings", "key": "f1" },
+    { "name": "fullScreen", "key": "enter", "alt": true },
+    { "name": "fullScreen", "key": "f11" },
+    { "name": "up", "key": "up" },
+    { "name": "down", "key": "down" },
+    { "name": "left", "key": "left" },
+    { "name": "right", "key": "right" },
+    { "name": "unitQueue1", "key": ["numpad1", "1"] },
+    { "name": "unitQueue2", "key": ["numpad2", "2"] },
+    { "name": "unitQueue3", "key": ["numpad3", "3"] }
+  ]
+}

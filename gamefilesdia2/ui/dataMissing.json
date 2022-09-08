@@ -1,0 +1,19 @@
+{
+  "load": "res/textures.json",
+  "load": "res/fonts.json",
+  "inputEvent": {
+    "key": ["enter", " ", "esc"],
+    "action": { "name": "game.close" }
+  },
+  "button": {
+    "id": "quit",
+    "font": "font",
+    "position": ["center", "center"],
+    "anchor": "none",
+    "horizontalAlign": "center",
+    "verticalAlign": "center",
+    "binding": "Error loading images\nMake sure Diabolika 2 game data is present.",
+    "bindingFlags": "once",
+    "onClick": { "name": "game.close" }
+  }
+}

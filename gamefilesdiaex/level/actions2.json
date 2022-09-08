@@ -1,0 +1,28 @@
+{
+  "action": [
+    {
+      "name": "action.set",
+      "id": "loadGame",
+      "action": {
+        "name": "if.equal",
+        "param1": { "name": "file.exists", "file": "save.json" },
+        "param2": true,
+        "then": [
+          { "name": "level.loadGame", "file": "save.json" },
+          "updateUnitQueues"
+        ]
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "saveGame",
+      "action": {
+        "name": "if.equal",
+        "param1": "%currentLevel.gameOver%",
+        "param2": false,
+        "then": { "name": "level.saveGame", "file": "save.json" },
+        "else": { "name": "io.delete", "file": "save.json" }
+      }
+    }
+  ]
+}

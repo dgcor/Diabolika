@@ -1,0 +1,29 @@
+{
+  "game": {
+    "onClose": [
+      "saveGame",
+      "saveSettingsAndClose"
+    ]
+  },
+  "action": [
+    {
+      "name": "drawable.setAction",
+      "id": "quit",
+      "event": "click",
+      "action": {
+        "name": "game.fadeOut",
+        "action": [
+          "saveGame",
+          "saveSettingsAndClose"
+        ]
+      }
+    },
+    {
+      "name": "if.equal",
+      "param1": { "name": "file.exists", "file": "save.json" },
+      "param2": true,
+      "then": { "name": "load", "file": "ui/playSaved.json" },
+      "else": { "name": "load", "file": "ui/credits.json" }
+    }
+  ]
+}

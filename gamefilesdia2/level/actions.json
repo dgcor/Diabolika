@@ -47,9 +47,7 @@
       "id": "newGame",
       "action": [
         { "name": "level.newGame" },
-        "updateUnitQueue1",
-        "updateUnitQueue2",
-        "updateUnitQueue3"
+        "updateUnitQueues"
       ]
     },
     {
@@ -233,5 +231,6 @@
         "else": { "name": "load", "file": "ui/gameOver.json" }
       }
     }
-  ]
+  ],
+  "load": "level/actions2.json"
 }

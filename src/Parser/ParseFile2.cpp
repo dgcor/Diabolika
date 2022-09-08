@@ -1,9 +1,9 @@
 #include "ParseFile2.h"
 #include "Parser/ParseFile.h"
-#include "Parser/ParseLevel.h"
-#include "Parser/ParseUnit.h"
-#include "Parser/ParseUnitClass.h"
-#include "Utils/Utils.h"
+#include "Parser/Level/ParseLevel.h"
+#include "Parser/Unit/ParseUnit.h"
+#include "Parser/Unit/ParseUnitClass.h"
+#include "Utils/StringHash.h"
 
 namespace Parser2
 {
@@ -17,47 +17,17 @@ namespace Parser2
 		{
 		case str2int16("level"):
 		{
-			if (elem.IsArray() == false)
-			{
-				parseLevel(game, elem);
-			}
-			else
-			{
-				for (const auto& val : elem)
-				{
-					parseDocumentElemHelper(game, nameHash16, val, replaceVars, allocator);
-				}
-			}
+			parseDocumentElemArray(parseLevel, game, nameHash16, elem, replaceVars, allocator);
 			break;
 		}
 		case str2int16("unit"):
 		{
-			if (elem.IsArray() == false)
-			{
-				parseUnit(game, elem);
-			}
-			else
-			{
-				for (const auto& val : elem)
-				{
-					parseDocumentElemHelper(game, nameHash16, val, replaceVars, allocator);
-				}
-			}
+			parseDocumentElemArray(parseUnit, game, nameHash16, elem, replaceVars, allocator);
 			break;
 		}
 		case str2int16("unitClass"):
 		{
-			if (elem.IsArray() == false)
-			{
-				parseUnitClass(game, elem);
-			}
-			else
-			{
-				for (const auto& val : elem)
-				{
-					parseDocumentElemHelper(game, nameHash16, val, replaceVars, allocator);
-				}
-			}
+			parseDocumentElemArray(parseUnitClass, game, nameHash16, elem, replaceVars, allocator);
 			break;
 		}
 		default:

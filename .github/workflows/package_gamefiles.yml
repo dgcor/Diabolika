@@ -1,0 +1,53 @@
+name: Package_gamefiles
+
+on:
+  workflow_dispatch:
+
+jobs:
+  package_gamefiles:
+    name: package gamefiles
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Diabolika
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: |
+        sudo apt install -yq --no-install-suggests --no-install-recommends ffmpeg fluidsynth > /dev/null
+
+    - name: Download Diabolika2 and copy original gamefiles
+      run: |
+        wget https://archive.org/download/Diabolika2TheDevilsLastStand_1020/Diabolika2.zip -N
+        unzip Diabolika2.zip -x "*.dat" "*.exe" "*.txt" -d gamefilesdia2
+
+    - name: Download Windows SoundFont
+      run: |
+        wget https://musical-artifacts.com/artifacts/713/gm.sf2 -N
+
+    - name: Install xbrz
+      run: |
+        wget https://github.com/dgcor/xbrz-cli/releases/download/v1.0/xbrz-linux-x86_64.AppImage.zip -N
+        unzip xbrz-linux-x86_64.AppImage.zip
+        chmod +x xbrz
+
+    - name: Convert midi to ogg
+      run: |
+        fluidsynth -a alsa --gain 1 -T raw -F - gm.sf2 gamefilesdia2/bgm/kyrie.mid | \
+          ffmpeg -f s32le -i - gamefilesdia2/bgm/kyrie.ogg
+        rm gamefilesdia2/bgm/kyrie.mid
+
+    - name: Convert images to png and apply xbrz scaler
+      run: |
+        mkdir -p gamefilesdia2/gfx2x
+        chmod +x pkg/upscale_images.sh
+        ./pkg/upscale_images.sh
+        rm gamefilesdia2/gfx/*.bmp
+
+    - name: Create gamefiles zip
+      run: 7z a gamefilesdia2.zip ./gamefilesdia2/*
+
+    - name: Create gamefiles artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: artifact-gamefilesdia2
+        path: gamefilesdia2.zip

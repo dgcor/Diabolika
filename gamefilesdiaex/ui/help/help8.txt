@@ -8,6 +8,8 @@ return the currently active unit back to the side-
 bar.
 
 Space or return places the unit in the board and
-w, s, a, d / up, down, left, right move the unit.
+[1], [2], [3], [4] / up, down, left, right move the unit.
 
-Press r or left-click to rotate the selected unit.
+Press [5] or left-click to rotate the selected unit.
+
+You can load (F8) and save (F5) the current game.

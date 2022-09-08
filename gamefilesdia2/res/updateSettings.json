@@ -19,29 +19,20 @@
       "case": [
         {
           "value": 2,
-          "action": {
-            "name": "loadJson",
-            "json": {
-              "refWindowSize": [1280, 960],
-              "minWindowSize": [1280, 960],
-              "windowSize": [1280, 960]
-            }
-          }
+          "action": [
+            { "name": "game.setProperty", "property": "refSize", "value": [1280, 960] },
+            { "name": "game.setProperty", "property": "minSize", "value": [1280, 960] }
+          ]
         }
       ],
       "default": [
         { "name": "variable.set", "key": "scale", "value": 1 },
-        {
-          "name": "loadJson",
-          "json": {
-            "refWindowSize": [640, 480],
-            "minWindowSize": [640, 480],
-            "windowSize": [640, 480]
-          }
-        }
+        { "name": "game.setProperty", "property": "refSize", "value": [640, 480] },
+        { "name": "game.setProperty", "property": "minSize", "value": [640, 480] }
       ]
     },
-    { "name": "variable.setIfNull", "key": "shader", "value": "default" }
+    { "name": "variable.setIfNull", "key": "shader", "value": "default" },
+    { "name": "variable.setIfNull", "key": "bgm", "value": true }
   ],
   "replaceVars": "value",
   "load": "res/shaders/|shader|.json"

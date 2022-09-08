@@ -1,0 +1,28 @@
+{
+  "inputEvent": [
+    {
+      "gameInputEvent": "help",
+      "action": { "name": "button.click", "id": "help" }
+    },
+    {
+      "gameInputEvent": "settings",
+      "action": { "name": "load", "file": "ui/settings.json" }
+    },
+    {
+      "gameInputEvent": ["enter", "space", "newGame"],
+      "action": { "name": "button.click", "id": "new" }
+    },
+    {
+      "gameInputEvent": "esc",
+      "action": { "name": "button.click", "id": "quit" }
+    },
+    {
+      "gameInputEvent": "loadGame",
+      "action": { "name": "load", "file": "ui/playSaved.json" }
+    },
+    {
+      "gameInputEvent": "saveGame",
+      "action": "saveGame"
+    }
+  ]
+}

@@ -5,7 +5,7 @@
     "ignorePrevious": true
   },
   "inputEvent": {
-    "key": ["enter", " "],
+    "gameInputEvent": ["enter", "help", "space"],
     "action": "#btnBackground.click"
   },
   "replaceVars": "value",

@@ -1,0 +1,9 @@
+{
+  "audio": {
+    "id": "main",
+    "file": "bgm/kyrie.ogg",
+    "resource": "mainMenu",
+    "loop": true,
+    "play": true
+  }
+}

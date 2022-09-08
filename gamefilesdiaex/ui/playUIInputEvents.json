@@ -1,0 +1,40 @@
+{
+  "inputEvent": [
+    {
+      "gameInputEvent": ["enter", "space"],
+      "action": "makeMove"
+    },
+    {
+      "gameInputEvent": "rotateUnit",
+      "action": "rotateSelectedUnit"
+    },
+    {
+      "gameInputEvent": "up",
+      "action": "moveSelectedTileUp"
+    },
+    {
+      "gameInputEvent": "down",
+      "action": "moveSelectedTileDown"
+    },
+    {
+      "gameInputEvent": "left",
+      "action": "moveSelectedTileLeft"
+    },
+    {
+      "gameInputEvent": "right",
+      "action": "moveSelectedTileRight"
+    },
+    {
+      "gameInputEvent": "unitQueue1",
+      "action": "selectUnitQueue1"
+    },
+    {
+      "gameInputEvent": "unitQueue2",
+      "action": "selectUnitQueue2"
+    },
+    {
+      "gameInputEvent": "unitQueue3",
+      "action": "selectUnitQueue3"
+    }
+  ]
+}

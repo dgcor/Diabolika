@@ -2,6 +2,17 @@
   "action": [
     {
       "name": "action.set",
+      "id": "loadBGM",
+      "action": {
+        "name": "if.equal",
+        "param1": "%bgm%",
+        "param2": true,
+        "then": { "name": "load", "file": "bgm/bgm.json" },
+        "else": { "name": "audio.delete", "id": "main" }
+      }
+    },
+    {
+      "name": "action.set",
       "id": "playSoundBubble",
       "action": { "name": "sound.loadPlay", "file": "sfx/bubble.wav" }
     },
@@ -34,6 +45,38 @@
       "name": "action.set",
       "id": "playSoundThump",
       "action": { "name": "sound.loadPlay", "file": "sfx/thump.wav" }
+    },
+    {
+      "name": "action.set",
+      "id": "saveSettings",
+      "action": {
+        "name": "file.copy",
+        "file": "ui/settingsFile.json",
+        "writeFile": "settings.json",
+        "replace": "value"
+      }
+    },
+    {
+      "name": "action.set",
+      "id": "saveSettingsAndClose",
+      "action": [
+        "saveSettings",
+        { "name": "game.close" }
+      ]
+    },
+    {
+      "name": "action.set",
+      "id": "fullScreen",
+      "action": [
+        {
+          "name": "if.equal",
+          "param1": "%game.fullScreen%",
+          "param2": false,
+          "then": { "name": "game.setProperty", "property": "fullScreen", "value": true },
+          "else": { "name": "game.setProperty", "property": "fullScreen", "value": false }
+        },
+        "saveSettings"
+      ]
     }
   ]
 }

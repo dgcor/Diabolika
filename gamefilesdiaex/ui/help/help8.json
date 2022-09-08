@@ -1,0 +1,37 @@
+{
+  "load": "ui/help/helpPanel.json",
+  "replaceVars": "value",
+  "button": {
+    "id": "default",
+    "texture": "empty",
+    "textureRect": ["|$.#scale * 448|", "|$.#scale * 480|"],
+    "position": ["|$.#scale * 192|", 0],
+    "anchor": "all",
+    "onClick": { "name": "resource.pop", "id": "popup" }
+  },
+  "text": [
+    {
+      "id": "txtHelp1",
+      "font": "font",
+      "position": ["|$.#scale * 415|", "|$.#scale * 32|"],
+      "anchor": "none",
+      "horizontalAlign": "center",
+      "text": "Keyboard Commands"
+    },
+    {
+      "id": "txtHelp2",
+      "font": "font",
+      "position": ["|$.#scale * 224|", "|$.#scale * 64|"],
+      "anchor": "none",
+      "bindToFormat": false,
+      "binding": [
+        "%game.scancodeKey.w%",
+        "%game.scancodeKey.s%",
+        "%game.scancodeKey.a%",
+        "%game.scancodeKey.d%",
+        "%game.scancodeKey.r%"
+      ],
+      "file": "ui/help/help8.txt"
+    }
+  ]
+}
