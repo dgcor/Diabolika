@@ -60,17 +60,23 @@ bool Unit::getProperty(const std::string_view prop, Variable& var) const
 	auto propHash = str2int16(props.first);
 	switch (propHash)
 	{
+	case str2int16("boardPosition"):
+		var = UIObjectUtils::getTuple2iProp(boardPosition, props.second);
+		break;
 	case str2int16("direction"):
 		var = Variable((int64_t)direction);
-		break;
-	case str2int16("points"):
-		var = Variable((int64_t)points);
 		break;
 	case str2int16("disableExplosion"):
 		var = Variable(disableExplosion);
 		break;
-	case str2int16("boardPosition"):
-		var = UIObjectUtils::getTuple2iProp(boardPosition, props.second);
+	case str2int16("name"):
+		var = Variable(class_->Name());
+		break;
+	case str2int16("points"):
+		var = Variable((int64_t)points);
+		break;
+	case str2int16("type"):
+		var = Variable(class_->Type());
 		break;
 	default:
 		return Animation::getProperty(prop, var);
@@ -143,42 +149,41 @@ void Unit::explode(Game& game, Level& level, std::vector<PairInt16>& newExplosio
 				continue;
 			}
 			PairInt16 newExplosion(
-				boardPosition.x + explodeboardPos.x, boardPosition.y + explodeboardPos.y
+				boardPosition.x + explodeboardPos.x,
+				boardPosition.y + explodeboardPos.y
 			);
-			while (true)
+			while (level.Board().isCoordValid(newExplosion) == true)
 			{
-				if (level.Board().isCoordValid(newExplosion) == true)
+				if (level.Board().get(newExplosion).isWall == true)
 				{
-					if (blastExpands == false)
-					{
-						newExplosions.push_back(newExplosion);
-					}
-					else
-					{
-						if (level.Board().hasUnit(newExplosion) == true)
-						{
-							newExplosions.push_back(newExplosion);
-						}
-						if (explodeboardPos.x > 0)
-						{
-							newExplosion.x++;
-						}
-						else if (explodeboardPos.x < 0)
-						{
-							newExplosion.x--;
-						}
-						if (explodeboardPos.y > 0)
-						{
-							newExplosion.y++;
-						}
-						else if (explodeboardPos.y < 0)
-						{
-							newExplosion.y--;
-						}
-						continue;
-					}
+					break;
 				}
-				break;
+				if (blastExpands == false)
+				{
+					newExplosions.push_back(newExplosion);
+					break;
+				}
+
+				if (level.Board().hasUnit(newExplosion) == true)
+				{
+					newExplosions.push_back(newExplosion);
+				}
+				if (explodeboardPos.x > 0)
+				{
+					newExplosion.x++;
+				}
+				else if (explodeboardPos.x < 0)
+				{
+					newExplosion.x--;
+				}
+				if (explodeboardPos.y > 0)
+				{
+					newExplosion.y++;
+				}
+				else if (explodeboardPos.y < 0)
+				{
+					newExplosion.y--;
+				}
 			}
 		}
 	}

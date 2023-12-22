@@ -19,6 +19,7 @@ private:
 	friend class LevelUIObject;
 
 	LevelBoard board;
+	std::vector<uint16_t> boardTiles;
 
 	Animation selectedTileAnim;
 
@@ -50,6 +51,7 @@ private:
 	sf::Time timeout{ sf::milliseconds(1000) };
 	std::vector<PairInt16> drawExplosions;
 	std::vector<PairInt16> currentExplosions;
+	std::vector<PairInt16> currentWalls;
 
 	LevelOptionsManager optionsManager;
 
@@ -68,6 +70,7 @@ private:
 	void nextRound(Game& game);
 	void processStep(Game& game);
 	void processExplosions(Game& game);
+	void updateLevelWalls();
 	void addLevelUnits();
 
 public:
@@ -111,6 +114,9 @@ public:
 
 	auto& Board() const noexcept { return board; }
 
+	auto& BoardTiles() const noexcept { return boardTiles; }
+	void BoardTiles(const std::vector<uint16_t> boardTiles_) noexcept { boardTiles = boardTiles_; }
+
 	auto& Options() const noexcept { return options; }
 
 	auto& AllOptions() noexcept { return optionsManager; }
@@ -133,6 +139,8 @@ public:
 	void addUnit(const std::shared_ptr<Unit>& unit, PairInt16 boardPos);
 	void deleteUnit(const std::shared_ptr<Unit>& unit);
 	void deleteUnit(PairInt16 boardPos);
+
+	void addWall(PairInt16 boardPos);
 
 	void newGame(Game& game);
 	void loadGame(Game& game, const std::string_view filePath);

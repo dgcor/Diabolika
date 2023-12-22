@@ -36,6 +36,8 @@ bool LevelDraw::updateBoardAnimations(Level& level, Game& game)
 	bool allFinished = true;
 	for (auto& cell : level.board)
 	{
+		cell.tile.update(game);
+
 		auto finished = cell.anim.hasPlayOnceAnimationFinished();
 		if (finished == false)
 		{
@@ -163,9 +165,7 @@ void LevelDraw::draw(const Level& level, const Game& game, sf::RenderTarget& tar
 	for (const auto& cell : level.board)
 	{
 		level.surface.draw(game, cell.tile);
-	}
-	for (const auto& cell : level.board)
-	{
+
 		if (cell.unit != nullptr)
 		{
 			level.surface.draw(game, *cell.unit);

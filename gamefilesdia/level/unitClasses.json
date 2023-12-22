@@ -1,0 +1,146 @@
+{
+  "unitClass": [
+    {
+      "id": "minorDemon",
+      "name": "Minor Demon",
+      "type": "demon",
+      "texturePack": "minorDemon",
+      "points": 50
+    },
+    {
+      "id": "majorDemon",
+      "name": "Major Demon",
+      "type": "demon",
+      "texturePack": "majorDemon",
+      "points": 100,
+      "spawns": "minorDemon"
+    },
+    {
+      "id": "elderDemon",
+      "name": "Elder Demon",
+      "type": "demon",
+      "texturePack": "elderDemon",
+      "points": 200,
+      "spawns": "majorDemon"
+    },
+    {
+      "id": "strawMan",
+      "name": "Straw Man",
+      "type": "exploder",
+      "texturePack": "strawMan",
+      "points": 2,
+      "directions": 4,
+      "explodePattern": [
+        [[0, 1]],
+        [[-1, 0]],
+        [[0, -1]],
+        [[1, 0]]
+      ],
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "hydra",
+      "name": "Hydra",
+      "type": "exploder",
+      "texturePack": "hydra",
+      "points": 4,
+      "directions": 2,
+      "explodePattern": [
+        [[0, 1], [0, -1]],
+        [[-1, 0], [1, 0]]
+      ],
+      "onCreate": [
+        "playSoundThump",
+        "playSoundRattler"
+      ]
+    },
+    {
+      "id": "crossImp",
+      "name": "Cross Imp",
+      "type": "exploder",
+      "texturePack": "crossImp",
+      "points": 6,
+      "explodePattern": [[0, 1], [-1, 0], [0, -1], [1, 0]],
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "diagonalImp",
+      "name": "Diagonal Imp",
+      "type": "exploder",
+      "texturePack": "diagonalImp",
+      "points": 6,
+      "explodePattern": [[-1, 1], [-1, -1], [1, -1], [1, 1]],
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "flameToad",
+      "name": "Flame Toads",
+      "type": "exploder",
+      "texturePack": "flameToad",
+      "points": 8,
+      "explodePattern": [[0, 2], [-2, 0], [0, -2], [2, 0]],
+      "onCreate": [
+        "playSoundThump",
+        "playSoundFrog"
+      ]
+    },
+    {
+      "id": "exploder",
+      "name": "Exploder",
+      "type": "exploder",
+      "texturePack": "exploder",
+      "points": 10,
+      "explodePattern": [[0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1], [1, -1], [1, 0], [1, 1]],
+      "onCreate": [
+        "playSoundThump",
+        "playSoundBubble"
+      ]
+    },
+    {
+      "id": "kannon",
+      "name": "Kannon",
+      "type": "exploder",
+      "texturePack": "kannon",
+      "explosionTexturePack": "explosionkannon",
+      "points": 20,
+      "directions": 4,
+      "explodePattern": [
+        [[0, 1]],
+        [[-1, 0]],
+        [[0, -1]],
+        [[1, 0]]
+      ],
+      "blastExpands": true,
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "magikMissile",
+      "name": "Magik Missile",
+      "type": "exploder",
+      "texturePack": "magikMissile",
+      "explosionTexturePack": "explosionMissile",
+      "points": 20,
+      "links": "missileTarget",
+      "linkType": "unidirectional",
+      "onCreate": "playSoundThump",
+      "onExplosion": "playSoundMissile"
+    },
+    {
+      "id": "missileTarget",
+      "name": "Missile Target",
+      "type": "exploder",
+      "texturePack": "missileTarget",
+      "points": 10,
+      "explodePattern": [[0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1], [1, -1], [1, 0], [1, 1]],
+      "onCreate": "playSoundThump"
+    },
+    {
+      "id": "sacrifice",
+      "name": "Sacrifice",
+      "type": "sacrifice",
+      "texturePack": "sacrifice",
+      "points": 50,
+      "onCreate": "playSoundThump"
+    }
+  ]
+}

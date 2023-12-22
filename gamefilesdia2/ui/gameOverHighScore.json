@@ -55,7 +55,12 @@
           }
         }
       },
-      { "name": "level.save", "file": "level/highScores.json" },
+      {
+        "name": "file.copy",
+        "file": "level/highScoresTemplate.json",
+        "writeFile": "level/highScores.json",
+        "replace": "value"
+      },
       { "name": "drawable.delete", "id": "gameOverTitle" },
       { "name": "drawable.delete", "id": "gameOverText" },
       { "name": "drawable.delete", "id": "highScoreName" },

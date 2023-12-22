@@ -1,0 +1,47 @@
+{
+  "replaceVars": "value",
+  "texturePack": [
+    {
+      "id": "font",
+      "type": "font",
+      "texture": "font",
+      "charSizeFile": "|gfxPath|/font.txt",
+      "rows": 16,
+      "cols": 16
+    },
+    {
+      "id": "font2",
+      "texture": "font2",
+      "frames": [10, 1],
+      "startIndex": 48
+    }
+  ],
+  "font": [
+    {
+      "id": "font",
+      "texturePack": "font",
+      "fontColor": "0xF8F8F8",
+      "newLine": "|$.#scale * 13|"
+    },
+    {
+      "id": "fontMenu",
+      "texturePack": "font",
+      "fontColor": "0xF09820",
+      "newLine": "|$.#scale * 13|"
+    },
+    {
+      "id": "fontScore",
+      "texturePack": "font",
+      "fontColor": "0xFFFF00",
+      "newLine": "|$.#scale * 15|"
+    },
+    {
+      "id": "font2",
+      "texturePack": "font2",
+      "horizontalSpaceOffset": "|$.#scale * (-1)|",
+      "space": 0,
+      "newLine": "|$.#scale * 20|",
+      "tab": "|$.#scale * 12|"
+    }
+  ]
+}

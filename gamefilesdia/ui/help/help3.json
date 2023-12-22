@@ -1,0 +1,176 @@
+{
+  "load": "ui/help/helpPanel.json",
+  "replaceVars": "value",
+  "button": {
+    "id": "default",
+    "texture": "empty",
+    "textureRect": ["|game.refSize.x|", "|game.refSize.y|"],
+    "resizable": true,
+    "anchor": "all",
+    "onClick": [
+      { "name": "resource.pop", "id": "popup" },
+      { "name": "load", "file": "ui/help/help4.json" }
+    ]
+  },
+  "image": [
+    {
+      "id": "kannon",
+      "texturePack": "kannon",
+      "textureIndex": 21,
+      "position": ["|$.#scale * 210|", "|$.#scale * 32|"],
+      "anchor": "none"
+    },
+    {
+      "id": "kannonBall",
+      "texture": "fx",
+      "textureRect": [0, "|$.#scale * 64|", "|$.#scale * 32|", "|$.#scale * 64|"],
+      "position": ["|$.#scale * 242|", "|$.#scale * 32|"],
+      "anchor": "none"
+    },
+    {
+      "id": "magikMissile",
+      "texturePack": "magikMissile",
+      "position": ["|$.#scale * 210|", "|$.#scale * 108|"],
+      "anchor": "none"
+    },
+    {
+      "id": "missileTargetExplosion1",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 210|", "|$.#scale * 176|"],
+      "anchor": "none"
+    },
+    {
+      "id": "missileTargetExplosion2",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 242|", "|$.#scale * 176|"],
+      "anchor": "none"
+    },
+    {
+      "id": "missileTargetExplosion3",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 274|", "|$.#scale * 176|"],
+      "anchor": "none"
+    },
+    {
+      "id": "missileTargetExplosion4",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 210|", "|$.#scale * 196|"],
+      "anchor": "none"
+    },
+    {
+      "id": "missileTarget",
+      "texturePack": "missileTarget",
+      "position": ["|$.#scale * 242|", "|$.#scale * 192|"],
+      "anchor": "none"
+    },
+    {
+      "id": "missileTargetExplosion5",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 274|", "|$.#scale * 196|"],
+      "anchor": "none"
+    },
+    {
+      "id": "missileTargetExplosion6",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 210|", "|$.#scale * 216|"],
+      "anchor": "none"
+    },
+    {
+      "id": "missileTargetExplosion7",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 242|", "|$.#scale * 216|"],
+      "anchor": "none"
+    },
+    {
+      "id": "missileTargetExplosion8",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 274|", "|$.#scale * 216|"],
+      "anchor": "none"
+    },
+    {
+      "id": "flameToadExplosion1",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 262|", "|$.#scale * 274|"],
+      "anchor": "none"
+    },
+    {
+      "id": "flameToadExplosion2",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 210|", "|$.#scale * 310|"],
+      "anchor": "none"
+    },
+    {
+      "id": "flameToad",
+      "texturePack": "flameToad",
+      "position": ["|$.#scale * 262|", "|$.#scale * 306|"],
+      "anchor": "none"
+    },
+    {
+      "id": "flameToadExplosion3",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 314|", "|$.#scale * 310|"],
+      "anchor": "none"
+    },
+    {
+      "id": "flameToadExplosion4",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 262|", "|$.#scale * 352|"],
+      "anchor": "none"
+    },
+    {
+      "id": "sacrifice",
+      "texturePack": "sacrifice",
+      "position": ["|$.#scale * 528|", "|$.#scale * 348|"],
+      "anchor": "none"
+    }
+  ],
+  "text": [
+    {
+      "id": "txtHelp1",
+      "font": "font",
+      "position": ["|$.#scale * 210|", "|$.#scale * 98|"],
+      "anchor": "none",
+      "file": "ui/help/help3-1.txt"
+    },
+    {
+      "id": "txtHelp2",
+      "font": "font",
+      "position": ["|$.#scale * 210|", "|$.#scale * 176|"],
+      "anchor": "none",
+      "file": "ui/help/help3-2.txt"
+    },
+    {
+      "id": "txtHelp3",
+      "font": "font",
+      "position": ["|$.#scale * 210|", "|$.#scale * 280|"],
+      "anchor": "none",
+      "file": "ui/help/help3-3.txt"
+    },
+    {
+      "id": "txtHelp4",
+      "font": "font",
+      "position": ["|$.#scale * 362|", "|$.#scale * 350|"],
+      "anchor": "none",
+      "text": "Flame Toad"
+    },
+    {
+      "id": "txtHelp5",
+      "font": "font",
+      "position": ["|$.#scale * 316|", "|$.#scale * 418|"],
+      "anchor": "none",
+      "file": "ui/help/help3-4.txt"
+    }
+  ]
+}

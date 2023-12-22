@@ -8,6 +8,7 @@
 #include "Parser/Drawables/ParseDrawable.h"
 #include "Parser/ParseAction.h"
 #include "Parser/Utils/ParseUtils.h"
+#include "Utils/NumberVector.h"
 #include "Utils/StringHash.h"
 
 namespace Parser
@@ -46,7 +47,7 @@ namespace Parser
 		}
 		if (elem.HasMember("timeout"sv) == true)
 		{
-			level->setTimeout(getTimeVal(elem["timeout"sv]));
+			level->setTimeout(getTimeUVal(elem["timeout"sv]));
 		}
 		if (isValidArray(elem, "levels") == true)
 		{
@@ -55,6 +56,11 @@ namespace Parser
 		if (isValidArray(elem, "highScores") == true)
 		{
 			parseLevelScores(level->HighScores(), elem["highScores"sv]);
+		}
+		if (elem.HasMember("boardTiles") == true)
+		{
+			NumberVector<uint16_t> boardTiles(getStringViewVal(elem["boardTiles"sv]), 0, 0xFFFF);
+			level->BoardTiles(boardTiles.getContainer());
 		}
 
 		if (elem.HasMember("onLeftClick"sv))

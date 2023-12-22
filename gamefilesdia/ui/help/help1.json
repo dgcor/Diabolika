@@ -1,0 +1,65 @@
+{
+  "load": "ui/help/helpPanel.json",
+  "replaceVars": "value",
+  "button": {
+    "id": "default",
+    "texture": "empty",
+    "textureRect": ["|game.refSize.x|", "|game.refSize.y|"],
+    "resizable": true,
+    "anchor": "all",
+    "onClick": [
+      { "name": "resource.pop", "id": "popup" },
+      { "name": "load", "file": "ui/help/help2.json" }
+    ]
+  },
+  "image": {
+    "id": "statusBar",
+    "texture": "side",
+    "textureRect": [0, "|$.#scale * 144|", "|$.#scale * 112|", "|$.#scale * 69|"],
+    "position": ["|$.#scale * 340|", "|$.#scale * 340|"],
+    "anchor": "none"
+  },
+  "shape": {
+    "id": "textLines",
+    "type": "lines",
+    "anchor": "none",
+    "vertices": [
+      { "position": ["|$.#scale * 324|", "|$.#scale * 369|"], "color": "0xF8F8F8" },
+      { "position": ["|$.#scale * 355|", "|$.#scale * 400|"], "color": "0xF8F8F8" },
+      { "position": ["|$.#scale * 384|", "|$.#scale * 422|"], "color": "0xF8F8F8" },
+      { "position": ["|$.#scale * 393|", "|$.#scale * 410|"], "color": "0xF8F8F8" },
+      { "position": ["|$.#scale * 437|", "|$.#scale * 400|"], "color": "0xF8F8F8" },
+      { "position": ["|$.#scale * 464|", "|$.#scale * 381|"], "color": "0xF8F8F8" }
+    ]
+  },
+  "text": [
+    {
+      "id": "txtHelp1",
+      "font": "font",
+      "position": ["|$.#scale * 196|", "|$.#scale * 52|"],
+      "anchor": "none",
+      "file": "ui/help/help1.txt"
+    },
+    {
+      "id": "txtHelpDemons",
+      "font": "font",
+      "position": ["|$.#scale * 230|", "|$.#scale * 360|"],
+      "anchor": "none",
+      "text": "Number of demons"
+    },
+    {
+      "id": "txtHelpTiles",
+      "font": "font",
+      "position": ["|$.#scale * 306|", "|$.#scale * 420|"],
+      "anchor": "none",
+      "text": "Number of tiles"
+    },
+    {
+      "id": "txtHelpDetonators",
+      "font": "font",
+      "position": ["|$.#scale * 468|", "|$.#scale * 374|"],
+      "anchor": "none",
+      "text": "Number of detonators"
+    }
+  ]
+}

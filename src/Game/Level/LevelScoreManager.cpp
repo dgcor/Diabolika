@@ -23,9 +23,9 @@ void LevelScoreManager::updateScores()
 			return a.score > b.score;
 		}
 	);
-	if (levelScores.size() > 10)
+	if (levelScores.size() > MaxSize)
 	{
-		levelScores.resize(10);
+		levelScores.resize(MaxSize);
 	}
 }
 

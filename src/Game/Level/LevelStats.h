@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdint>
 #include "Utils/UnorderedStringMap.h"
 
 class UnitClass;

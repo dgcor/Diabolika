@@ -1,0 +1,2 @@
+Kannon Fires a kannon ball in whatever direction it is facing, detonating
+everything in its path. Does not go through walls.

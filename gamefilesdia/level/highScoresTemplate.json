@@ -1,0 +1,47 @@
+{
+  "level": {
+    "id": "level",
+    "highScores": [
+      {
+        "name": "|currentLevel.highScore.0.name|",
+        "level": "|currentLevel.highScore.0.level|",
+        "score": "|currentLevel.highScore.0.score|"
+      },
+      {
+        "name": "|currentLevel.highScore.1.name|",
+        "level": "|currentLevel.highScore.1.level|",
+        "score": "|currentLevel.highScore.1.score|"
+      },
+      {
+        "name": "|currentLevel.highScore.2.name|",
+        "level": "|currentLevel.highScore.2.level|",
+        "score": "|currentLevel.highScore.2.score|"
+      },
+      {
+        "name": "|currentLevel.highScore.3.name|",
+        "level": "|currentLevel.highScore.3.level|",
+        "score": "|currentLevel.highScore.3.score|"
+      },
+      {
+        "name": "|currentLevel.highScore.4.name|",
+        "level": "|currentLevel.highScore.4.level|",
+        "score": "|currentLevel.highScore.4.score|"
+      },
+      {
+        "name": "|currentLevel.highScore.5.name|",
+        "level": "|currentLevel.highScore.5.level|",
+        "score": "|currentLevel.highScore.5.score|"
+      },
+      {
+        "name": "|currentLevel.highScore.6.name|",
+        "level": "|currentLevel.highScore.6.level|",
+        "score": "|currentLevel.highScore.6.score|"
+      },
+      {
+        "name": "|currentLevel.highScore.7.name|",
+        "level": "|currentLevel.highScore.7.level|",
+        "score": "|currentLevel.highScore.7.score|"
+      }
+    ]
+  }
+}

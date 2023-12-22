@@ -1,0 +1,24 @@
+{
+  "inputEvent": [
+    {
+      "gameInputEvent": "settings",
+      "action": null
+    },
+    {
+      "gameInputEvent": "unitQueue1",
+      "action": "selectUnitQueue1Once"
+    },
+    {
+      "gameInputEvent": "unitQueue2",
+      "action": "selectUnitQueue2Once"
+    },
+    {
+      "gameInputEvent": "unitQueue3",
+      "action": "selectUnitQueue3Once"
+    },
+    {
+      "gameInputEvent": "space",
+      "action": "returnUnitToQueue"
+    }
+  ]
+}

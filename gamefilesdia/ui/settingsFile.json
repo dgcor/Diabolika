@@ -1,0 +1,16 @@
+{
+  "game": {
+    "position": "|game.position|",
+    "size": "|game.windowedSize|",
+    "keepAR": "|game.keepAR|",
+    "stretchToFit": "|game.stretchToFit|",
+    "smoothScreen": "|game.smoothScreen|",
+    "frameRate": "|game.frameRate|",
+    "fullScreen": "|game.fullScreen|"
+  },
+  "variable": {
+    "scale": "|scale|",
+    "shader": "|shader|",
+    "bgm": "|bgm|"
+  }
+}

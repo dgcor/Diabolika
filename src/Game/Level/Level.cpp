@@ -159,6 +159,10 @@ void Level::addUnit(const std::shared_ptr<Unit>& unit)
 
 void Level::addUnit(const std::shared_ptr<Unit>& unit, PairInt16 boardPos)
 {
+	if (board.get(boardPos).isWall == true)
+	{
+		return;
+	}
 	auto oldUnit = board.addUnit(unit, boardPos);
 	if (oldUnit != nullptr)
 	{
@@ -189,17 +193,30 @@ void Level::deleteUnit(PairInt16 boardPos)
 	}
 }
 
+void Level::addWall(PairInt16 boardPos)
+{
+	if (board.isCoordFree(boardPos) == false)
+	{
+		return;
+	}
+
+	auto& cell = board.get(boardPos);
+	if (cell.isWall == false)
+	{
+		gameState.walls++;
+
+		currentWalls.push_back(boardPos);
+
+		cell.isWall = true;
+		cell.tile.setAnimation(cell.tileGroupIdx, 0);
+		cell.tile.Pause(false);
+	}
+}
+
 void Level::initNewGame(Game& game)
 {
 	pause = false;
 	board.Init({ 12, 12 });
-
-	int32_t numTiles = -1;
-	if (tilesTexturePack != nullptr)
-	{
-		numTiles = (int32_t)tilesTexturePack->size();
-		numTiles--;
-	}
 
 	boardRect.left = surface.Position().x + board.Padding().left;
 	boardRect.top = surface.Position().y + board.Padding().top;
@@ -216,15 +233,29 @@ void Level::initNewGame(Game& game)
 		for (int16_t x = 0; x < board.Size().x; x++)
 		{
 			LevelCell cell;
-			if (numTiles >= 0)
+
+			auto numTiles = (int32_t)tilesTexturePack->size();
+			numTiles--;
+
+			int32_t groupIdx = -1;
+			auto boardIdx = x + y * board.Size().y;
+
+			if (boardIdx < (int32_t)boardTiles.size())
 			{
-				TextureInfo ti;
-				auto randomIdx = Random::get((uint32_t)numTiles);
-				if (tilesTexturePack->get(randomIdx, ti) == true)
-				{
-					cell.tile.setTexture(ti);
-				}
+				groupIdx = boardTiles[boardIdx];
 			}
+			else if (numTiles >= 0)
+			{
+				groupIdx = Random::get(numTiles);
+			}
+
+			if (groupIdx >= 0)
+			{
+				cell.tileGroupIdx = groupIdx;
+				cell.tile.setAnimation(tilesTexturePack, groupIdx, 0);
+				cell.tile.Pause(true);
+			}
+
 			cell.tile.Position(board.toDrawCoord(x, y));
 			board.set(x, y, std::move(cell));
 		}
@@ -268,7 +299,9 @@ void Level::nextRound(Game& game)
 	options = optionsManager.get(gameState.level);
 	gameState.detonators += options.numDetonators;
 	gameState.units += options.numUnits;
+	gameState.walls += options.walls;
 	unitManager.updateUnitQueues(*this);
+	updateLevelWalls();
 	addLevelUnits();
 
 	game.Events().tryAddBack(newRoundAction);
@@ -334,7 +367,7 @@ void Level::processExplosions(Game& game)
 			LevelDraw::addExplosionAnim(cell.anim, unitExplTexPack, cell.unit->Direction());
 			cell.unit->explode(game, *this, newExplosions);
 		}
-		else
+		else if (cell.isWall == false)
 		{
 			LevelDraw::addExplosionAnim(*this, cell.anim);
 		}
@@ -348,6 +381,27 @@ void Level::processExplosions(Game& game)
 	gameState.chain++;
 
 	game.Events().tryAddBack(explosionAction);
+}
+
+void Level::updateLevelWalls()
+{
+	for (auto& boardPos : currentWalls)
+	{
+		auto& cell = board.get(boardPos);
+		if (cell.isWall == true)
+		{
+			cell.isWall = false;
+			cell.tile.setAnimation(cell.tileGroupIdx, 1);
+			cell.tile.Pause(false);
+		}
+	}
+	currentWalls.clear();
+
+	for (auto walls = (int)options.walls; walls > 0; walls--)
+	{
+		PairInt16 boardPos(Random::get(board.Size().x - 1), Random::get(board.Size().y - 1));
+		addWall(boardPos);
+	}
 }
 
 void Level::addLevelUnits()
@@ -390,7 +444,7 @@ void Level::addLevelUnits()
 			continue;
 		}
 		PairInt16 boardPos(Random::get(board.Size().x - 1), Random::get(board.Size().y - 1));
-		if (board.hasUnit(boardPos) == true)
+		if (board.isCoordFree(boardPos) == false)
 		{
 			continue;
 		}
@@ -442,7 +496,7 @@ void Level::makeMove(Game& game)
 			unitManager.hasSelectedUnit() == true)
 		{
 			auto& cell = board.get(gameState.selectedPosition);
-			if (cell.unit == nullptr)
+			if (cell.isWall == false && cell.unit == nullptr)
 			{
 				addUnit(unitManager.SelectedUnit(), gameState.selectedPosition);
 				unitManager.clearSelectedUnit(*this);

@@ -1,10 +1,10 @@
 #include "LevelOptionsManager.h"
 #include <algorithm>
-#include "Utils/ReverseIterable.h"
+#include <ranges>
 
 LevelOptions LevelOptionsManager::get(uint32_t level) const
 {
-	for (const auto& opt : reverse(options))
+	for (const auto& opt : options | std::views::reverse)
 	{
 		if (level >= opt.level)
 		{

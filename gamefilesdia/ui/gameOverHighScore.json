@@ -1,0 +1,74 @@
+{
+  "button": {
+    "id": "highScoreBlockInput",
+    "texture": "empty",
+    "textureRect": ["|game.refSize.x|", "|game.refSize.y|"],
+    "captureInputEvents": true,
+    "resizable": true,
+    "anchor": "all"
+  },
+  "inputEvent": {
+    "gameInputEvent": "enter",
+    "action": { "name": "button.click", "id": "highScoreOK" }
+  },
+  "replaceVars": "value",
+  "image": {
+    "id": "title2",
+    "texture": "background2",
+    "textureRect": ["|$.#scale * 126|", "|$.#scale * 50|"],
+    "position": ["|$.#scale * 321|", "|$.#scale * 230|"],
+    "anchor": "none"
+  },
+  "text": {
+    "id": "highScoreTitle",
+    "font": "font",
+    "position": ["|$.#scale * 323|", "|$.#scale * 232|"],
+    "anchor": "none",
+    "text": "Hi-score - Player |currentLevel.score|\n\nName:"
+  },
+  "inputText": {
+    "id": "highScoreName",
+    "font": "font",
+    "position": ["|$.#scale * 360|", "|$.#scale * 258|"],
+    "anchor": "none",
+    "minLength": 1,
+    "maxLength": 20,
+    "regex": "[\\w ]*",
+    "onClick": [
+      {
+        "replaceVars": false,
+        "name": "loadJson",
+        "json": {
+          "action": {
+            "replaceVars": "value",
+            "name": "level.addHighScore",
+            "scoreName": "|highScoreName.text|",
+            "scoreLevel": "|currentLevel.level|",
+            "score": "|currentLevel.score|"
+          }
+        }
+      },
+      {
+        "name": "file.copy",
+        "file": "level/highScoresTemplate.json",
+        "writeFile": "level/highScores.json",
+        "replace": "value"
+      },
+      { "name": "drawable.delete", "id": "title" },
+      { "name": "drawable.delete", "id": "title2" },
+      { "name": "drawable.delete", "id": "gameOverTitle" },
+      { "name": "drawable.delete", "id": "gameOverDevil" },
+      { "name": "drawable.delete", "id": "highScoreBlockInput" },
+      { "name": "drawable.delete", "id": "highScoreName" },
+      { "name": "drawable.delete", "id": "highScoreOK" },
+      { "name": "drawable.delete", "id": "highScoreTitle" }
+    ]
+  },
+  "button": {
+    "id": "highScoreOK",
+    "texture": "empty",
+    "textureRect": [1, 1],
+    "anchor": "none",
+    "onClick": { "name": "inputText.click", "id": "highScoreName" }
+  }
+}

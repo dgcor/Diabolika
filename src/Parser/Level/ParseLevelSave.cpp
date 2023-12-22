@@ -36,6 +36,13 @@ namespace Parser
 		{
 			for (const auto& val : elem["board"sv])
 			{
+				if (getBoolKey(val, "wall") == true)
+				{
+					auto pos = getVector2iKey<PairInt16>(val, "position", { -1, -1 });
+					levelSave.boardWalls.push_back(pos);
+					continue;
+				}
+
 				auto unit = parseLevelSaveUnit(level, val);
 				if (unit == nullptr)
 				{
@@ -45,10 +52,10 @@ namespace Parser
 
 				if (val.HasMember("linkedTo"sv) == true)
 				{
-					levelSave.links.push_back(
-						std::make_pair(
-							unit->BoardPosition(),
-							getVector2iVal<PairInt16>(val["linkedTo"])));
+					levelSave.links.push_back({
+						unit->BoardPosition(),
+						getVector2iVal<PairInt16>(val["linkedTo"])
+					});
 				}
 			}
 		}
@@ -76,10 +83,10 @@ namespace Parser
 
 					if (val.HasMember("linkedTo"sv) == true)
 					{
-						levelSave.links.push_back(
-							std::make_pair(
-								PairInt16(queueIdx, (int16_t)levelSave.queues.back().size() - 1),
-								getVector2iVal<PairInt16>(val["linkedTo"])));
+						levelSave.links.push_back({
+							PairInt16(queueIdx, (int16_t)levelSave.queues.back().size() - 1),
+							getVector2iVal<PairInt16>(val["linkedTo"])
+						});
 					}
 				}
 				queueIdx--;

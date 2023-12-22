@@ -33,6 +33,11 @@ bool LevelSave::load(Level& level, const LevelSaveObject& levelState)
 
 	level.gameState.selectedPosition = levelState.selectedPosition;
 
+	for (const auto& pos : levelState.boardWalls)
+	{
+		level.addWall(pos);
+	}
+
 	for (const auto& unit : levelState.boardUnits)
 	{
 		level.addUnit(unit);
@@ -148,19 +153,35 @@ void LevelSave::serialize(const Level& level, void* serializeObj)
 	writeKeyStringView(writer, "board");
 	writer.StartArray();
 
-	for (const auto& cell : level.board)
+	for (int16_t y = 0; y < level.board.Size().y; y++)
 	{
-		if (cell.unit == nullptr)
+		for (int16_t x = 0; x < level.board.Size().x; x++)
 		{
-			continue;
+			if (level.board.isCoordFree({ x, y }) == true)
+			{
+				continue;
+			}
+
+			const auto& cell = level.board.get(x, y);
+
+			// wall or unit
+			writer.StartObject();
+
+			if (cell.isWall == true)
+			{
+				auto& writer = *((PrettyWriter<StringBuffer>*)serializeObj);
+
+				writeBool(writer, "wall", true);
+				writeVector2i(writer, "position", PairInt16{ x, y });
+			}
+			else
+			{
+				serializeUnit(level, *cell.unit, true, serializeObj);
+			}
+
+			// wall or unit
+			writer.EndObject();
 		}
-		// unit
-		writer.StartObject();
-
-		serializeUnit(level, *cell.unit, true, serializeObj);
-
-		// unit
-		writer.EndObject();
 	}
 
 	// board

@@ -1,0 +1,34 @@
+{
+  "action": [
+    {
+      "name": "if.equal",
+      "param1": { "name": "file.exists", "file": "gfx2x/buttons.png" },
+      "param2": false,
+      "then": { "name": "variable.set", "key": "scale", "value": 1 }
+    },
+    {
+      "name": "switch",
+      "param": "%scale%",
+      "case": [
+        {
+          "value": 2,
+          "action": [
+            { "name": "variable.set", "key": "gfxPath", "value": "gfx2x" },
+            { "name": "game.setProperty", "property": "refSize", "value": [1280, 960] },
+            { "name": "game.setProperty", "property": "minSize", "value": [1280, 960] }
+          ]
+        }
+      ],
+      "default": [
+        { "name": "variable.set", "key": "scale", "value": 1 },
+        { "name": "variable.set", "key": "gfxPath", "value": "gfx" },
+        { "name": "game.setProperty", "property": "refSize", "value": [640, 480] },
+        { "name": "game.setProperty", "property": "minSize", "value": [640, 480] }
+      ]
+    },
+    { "name": "variable.setIfNull", "key": "shader", "value": "default" },
+    { "name": "variable.setIfNull", "key": "bgm", "value": true }
+  ],
+  "replaceVars": "value",
+  "load": "res/shaders/|shader|.json"
+}

@@ -73,6 +73,7 @@ namespace Parser
 
 		unitClass->Points(getIntKey(elem, "points"));
 		unitClass->Id(id);
+		unitClass->Name(getStringViewKey(elem, "name"));
 		unitClass->Type(getStringViewKey(elem, "type"));
 		unitClass->Spawns(getStringViewKey(elem, "spawns"));
 		unitClass->SpawnCount(getStringKey(elem, "spawnCount", "1"));

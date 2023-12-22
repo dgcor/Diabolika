@@ -1,0 +1,22 @@
+{
+  "action": {
+    "name": "resource.add",
+    "id": "credits"
+  },
+  "replaceVars": "value",
+  "image": [
+    {
+      "id": "backgroundBoard",
+      "texture": "backgroundTile",
+      "textureRect": ["|$.#scale * 32 * 12|", "|$.#scale * 32 * 12|"],
+      "position": ["|$.#scale * 192|", "|$.#scale * 49|"],
+      "anchor": "none"
+    },
+    {
+      "id": "title",
+      "texture": "title",
+      "position": ["|$.#scale * 320|", "|$.#scale * 178|"],
+      "anchor": "none"
+    }
+  ]
+}

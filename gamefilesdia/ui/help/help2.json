@@ -1,0 +1,226 @@
+{
+  "load": "ui/help/helpPanel.json",
+  "replaceVars": "value",
+  "button": {
+    "id": "default",
+    "texture": "empty",
+    "textureRect": ["|game.refSize.x|", "|game.refSize.y|"],
+    "resizable": true,
+    "anchor": "all",
+    "onClick": [
+      { "name": "resource.pop", "id": "popup" },
+      { "name": "load", "file": "ui/help/help3.json" }
+    ]
+  },
+  "image": [
+    {
+      "id": "strawMan",
+      "texturePack": "strawMan",
+      "textureIndex": 3,
+      "position": ["|$.#scale * 210|", "|$.#scale * 108|"],
+      "anchor": "none"
+    },
+    {
+      "id": "strawManExplosion",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 242|", "|$.#scale * 112|"],
+      "anchor": "none"
+    },
+    {
+      "id": "hydraExplosion1",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 210|", "|$.#scale * 174|"],
+      "anchor": "none"
+    },
+    {
+      "id": "hydra",
+      "texturePack": "hydra",
+      "textureIndex": 14,
+      "position": ["|$.#scale * 242|", "|$.#scale * 170|"],
+      "anchor": "none"
+    },
+    {
+      "id": "hydraExplosion2",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 274|", "|$.#scale * 174|"],
+      "anchor": "none"
+    },
+    {
+      "id": "crossImpExplosion1",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 242|", "|$.#scale * 234|"],
+      "anchor": "none"
+    },
+    {
+      "id": "crossImpExplosion2",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 210|", "|$.#scale * 254|"],
+      "anchor": "none"
+    },
+    {
+      "id": "crossImp",
+      "texturePack": "crossImp",
+      "position": ["|$.#scale * 242|", "|$.#scale * 254|"],
+      "anchor": "none"
+    },
+    {
+      "id": "crossImpExplosion3",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 274|", "|$.#scale * 254|"],
+      "anchor": "none"
+    },
+    {
+      "id": "crossImpExplosion4",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 242|", "|$.#scale * 278|"],
+      "anchor": "none"
+    },
+    {
+      "id": "diagonalImpExplosion1",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 330|", "|$.#scale * 234|"],
+      "anchor": "none"
+    },
+    {
+      "id": "diagonalImpExplosion2",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 394|", "|$.#scale * 234|"],
+      "anchor": "none"
+    },
+    {
+      "id": "diagonalImp",
+      "texturePack": "diagonalImp",
+      "position": ["|$.#scale * 362|", "|$.#scale * 254|"],
+      "anchor": "none"
+    },
+    {
+      "id": "diagonalImpExplosion3",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 330|", "|$.#scale * 278|"],
+      "anchor": "none"
+    },
+    {
+      "id": "diagonalImpExplosion4",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 394|", "|$.#scale * 278|"],
+      "anchor": "none"
+    },
+    {
+      "id": "exploderExplosion1",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 210|", "|$.#scale * 334|"],
+      "anchor": "none"
+    },
+    {
+      "id": "exploderExplosion2",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 242|", "|$.#scale * 334|"],
+      "anchor": "none"
+    },
+    {
+      "id": "exploderExplosion3",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 274|", "|$.#scale * 334|"],
+      "anchor": "none"
+    },
+    {
+      "id": "exploderExplosion4",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 210|", "|$.#scale * 354|"],
+      "anchor": "none"
+    },
+    {
+      "id": "exploder",
+      "texturePack": "exploder",
+      "position": ["|$.#scale * 242|", "|$.#scale * 354|"],
+      "anchor": "none"
+    },
+    {
+      "id": "exploderExplosion5",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 274|", "|$.#scale * 354|"],
+      "anchor": "none"
+    },
+    {
+      "id": "exploderExplosion6",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 210|", "|$.#scale * 374|"],
+      "anchor": "none"
+    },
+    {
+      "id": "exploderExplosion7",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 242|", "|$.#scale * 374|"],
+      "anchor": "none"
+    },
+    {
+      "id": "exploderExplosion8",
+      "texturePack": "explosion",
+      "textureIndex": 6,
+      "position": ["|$.#scale * 274|", "|$.#scale * 374|"],
+      "anchor": "none"
+    }
+  ],
+  "text": [
+    {
+      "id": "txtHelp1",
+      "font": "font",
+      "position": ["|$.#scale * 196|", "|$.#scale * 52|"],
+      "anchor": "none",
+      "file": "ui/help/help2.txt"
+    },
+    {
+      "id": "txtHelp2",
+      "font": "font",
+      "position": ["|$.#scale * 210|", "|$.#scale * 176|"],
+      "anchor": "none",
+      "text": "Straw Man (rotates in four directions)"
+    },
+    {
+      "id": "txtHelp3",
+      "font": "font",
+      "position": ["|$.#scale * 210|", "|$.#scale * 238|"],
+      "anchor": "none",
+      "text": "Hydra (rotates in two directions)"
+    },
+    {
+      "id": "txtHelp4",
+      "font": "font",
+      "position": ["|$.#scale * 236|", "|$.#scale * 338|"],
+      "anchor": "none",
+      "text": "Cross Imp"
+    },
+    {
+      "id": "txtHelp5",
+      "font": "font",
+      "position": ["|$.#scale * 348|", "|$.#scale * 338|"],
+      "anchor": "none",
+      "text": "Diagonal Imp"
+    },
+    {
+      "id": "txtHelp6",
+      "font": "font",
+      "position": ["|$.#scale * 320|", "|$.#scale * 388|"],
+      "anchor": "none",
+      "text": "Exploder"
+    }
+  ]
+}

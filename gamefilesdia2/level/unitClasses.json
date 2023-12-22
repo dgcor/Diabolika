@@ -2,12 +2,14 @@
   "unitClass": [
     {
       "id": "minorDemon",
+      "name": "Minor Demon",
       "type": "demon",
       "texturePack": "minorDemon",
       "points": 50
     },
     {
       "id": "majorDemon",
+      "name": "Major Demon",
       "type": "demon",
       "texturePack": "majorDemon",
       "points": 100,
@@ -15,6 +17,7 @@
     },
     {
       "id": "elderDemon",
+      "name": "Elder Demon",
       "type": "demon",
       "texturePack": "elderDemon",
       "points": 200,
@@ -22,6 +25,7 @@
     },
     {
       "id": "strawGolem",
+      "name": "Straw Golem",
       "type": "exploder",
       "texturePack": "strawGolem",
       "points": 2,
@@ -36,6 +40,7 @@
     },
     {
       "id": "hydra",
+      "name": "Hydra",
       "type": "exploder",
       "texturePack": "hydra",
       "points": 4,
@@ -51,6 +56,7 @@
     },
     {
       "id": "blueImp",
+      "name": "Blue Imp",
       "type": "exploder",
       "texturePack": "blueImp",
       "points": 6,
@@ -59,6 +65,7 @@
     },
     {
       "id": "purpleImp",
+      "name": "Purple Imp",
       "type": "exploder",
       "texturePack": "purpleImp",
       "points": 6,
@@ -67,6 +74,7 @@
     },
     {
       "id": "flameToad",
+      "name": "Flame Toad",
       "type": "exploder",
       "texturePack": "flameToad",
       "points": 8,
@@ -78,6 +86,7 @@
     },
     {
       "id": "exploder",
+      "name": "Exploder",
       "type": "exploder",
       "texturePack": "exploder",
       "points": 10,
@@ -89,6 +98,7 @@
     },
     {
       "id": "kannon",
+      "name": "Kannon",
       "type": "exploder",
       "texturePack": "kannon",
       "explosionTexturePack": "explosionkannon",
@@ -105,6 +115,7 @@
     },
     {
       "id": "magikMissile",
+      "name": "Magik Missile",
       "type": "exploder",
       "texturePack": "magikMissile",
       "explosionTexturePack": "explosionMissile",
@@ -116,6 +127,7 @@
     },
     {
       "id": "missileTarget",
+      "name": "Missile Target",
       "type": "exploder",
       "texturePack": "missileTarget",
       "points": 10,
@@ -124,6 +136,7 @@
     },
     {
       "id": "sacrifice",
+      "name": "Sacrifice",
       "type": "sacrifice",
       "texturePack": "sacrifice",
       "points": 100,
@@ -131,6 +144,7 @@
     },
     {
       "id": "mandrake",
+      "name": "Mandrake",
       "type": "sacrifice",
       "texturePack": "mandrake",
       "points": 10,
@@ -146,6 +160,7 @@
     },
     {
       "id": "ironMaiden",
+      "name": "Iron Maiden",
       "type": "exploder",
       "texturePack": "ironMaiden",
       "points": 20,
@@ -160,6 +175,7 @@
     },
     {
       "id": "kultist",
+      "name": "Kultist",
       "type": "exploder",
       "texturePack": "kultist",
       "points": 30,
@@ -171,6 +187,7 @@
     },
     {
       "id": "fallenAngel",
+      "name": "Fallen Angel",
       "type": "exploder",
       "texturePack": "fallenAngel",
       "points": 50,

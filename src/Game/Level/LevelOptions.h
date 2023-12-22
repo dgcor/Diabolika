@@ -10,6 +10,7 @@ struct LevelOptions
 	uint16_t numUnits{ 8 };
 	uint16_t numDetonators{ 2 };
 	uint16_t maxDemons{ 10 };
+	uint16_t walls{ 0 };
 	UnorderedStringMap<uint16_t> maxUnitsById;
 	UnorderedStringMap<uint16_t> maxUnitsByType;
 	std::vector<std::pair<std::string, Formula>> insertUnits;

@@ -1,0 +1,24 @@
+DIABOLIKA HELP FILE -
+_________________
+
+Diabolika is a puzzle game where the object is to keep back the horde of demons
+that appear on the screen. The game progresses in different phases:
+
+Phase One: Placing tiles - You are given a limited number of tiles to place at the
+beginning of each round. You can choose from the three tiles on the sidebar. Click
+on the tile you want, and move the tile to where you want to place it. Certain tiles
+may be rotated by right clicking. After you place a tile, a new tile will replace it on
+the sidebar. Press spacebar to cancel a tile you've selected.
+
+Phase Two: Detonation - You are given two detonators per round. Place your
+mottled, green hand over the tile or demon which you want to detonate, and
+left-click.  The idea is to create a chain reaction of exploding tiles to take out as many
+demons as possible. Extra points are awarded for destroying large numbers of
+demons and tiles at once. If, at the end of this phase, there are 10 demons on the
+screen, you lose.
+
+Phase Three: Regeneration - New demons and walls appear on the screen,
+becoming stronger and with greater numbers with each passing round.
+
+Status Bar Key:
+

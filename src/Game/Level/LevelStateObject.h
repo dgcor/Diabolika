@@ -11,6 +11,7 @@ struct LevelStateObject
 	uint64_t score{ 0 };
 	uint32_t chain{ 0 };
 
+	uint16_t walls{ 0 };
 	uint16_t units{ 0 };
 	uint16_t detonators{ 0 };
 

@@ -1,0 +1,4 @@
+{
+  "load": "ui/playUI.json",
+  "action": "newGame"
+}

@@ -1,0 +1,51 @@
+{
+  "action": [
+    { "name": "resource.pop", "id": "credits" },
+    { "name": "resource.pop", "id": "play" },
+    { "name": "resource.pop", "id": "popup" },
+    { "name": "resource.add", "id": "play" }
+  ],
+  "load": "ui/playUIInputEvents.json",
+  "replaceVars": "value",
+  "button": [
+    {
+      "id": "unitQueue1",
+      "texture": "empty",
+      "textureRect": ["|$.#scale * 32|", "|$.#scale * 64|"],
+      "position": ["|$.#scale * 86|", "|$.#scale * 280|"],
+      "anchor": "none",
+      "onClick": [
+        "selectUnitQueue1",
+        "showLeftClickMsg1"
+      ],
+      "onHoverEnter": "showLeftClickMsg1",
+      "onHoverLeave": "hideLeftClickMsg"
+    },
+    {
+      "id": "unitQueue2",
+      "texture": "empty",
+      "textureRect": ["|$.#scale * 32|", "|$.#scale * 64|"],
+      "position": ["|$.#scale * 118|", "|$.#scale * 280|"],
+      "anchor": "none",
+      "onClick": [
+        "selectUnitQueue2",
+        "showLeftClickMsg2"
+      ],
+      "onHoverEnter": "showLeftClickMsg2",
+      "onHoverLeave": "hideLeftClickMsg"
+    },
+    {
+      "id": "unitQueue3",
+      "texture": "empty",
+      "textureRect": ["|$.#scale * 32|", "|$.#scale * 64|"],
+      "position": ["|$.#scale * 150|", "|$.#scale * 280|"],
+      "anchor": "none",
+      "onClick": [
+        "selectUnitQueue3",
+        "showLeftClickMsg3"
+      ],
+      "onHoverEnter": "showLeftClickMsg3",
+      "onHoverLeave": "hideLeftClickMsg"
+    }
+  ]
+}

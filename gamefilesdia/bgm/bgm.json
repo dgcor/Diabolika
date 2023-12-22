@@ -1,0 +1,9 @@
+{
+  "audio": {
+    "id": "main",
+    "file": "bgm/main.ogg",
+    "resource": "mainMenu",
+    "loop": true,
+    "play": true
+  }
+}

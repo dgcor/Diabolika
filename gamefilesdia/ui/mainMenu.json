@@ -1,0 +1,190 @@
+{
+  "action": [
+    {
+      "name": "resource.add",
+      "id": "mainMenu"
+    },
+    "loadBGM"
+  ],
+  "replaceVars": "value",
+  "image": {
+    "id": "side",
+    "position": ["|$.#scale * 76|", "|$.#scale * 41|"],
+    "texture": "side",
+    "anchor": "none"
+  },
+  "animation": {
+    "id": "candle",
+    "position": ["|$.#scale * 154|", "|$.#scale * 174|"],
+    "texturePack": "candle",
+    "anchor": "none",
+    "refresh": 30
+  },
+  "button": [
+    {
+      "id": "btnBackground",
+      "texture": "empty",
+      "textureRect": ["|$.#scale * 640|", "|$.#scale * 480|"],
+      "anchor": "all",
+      "captureInputEvents": true,
+      "onClick": { "name": "button.click", "id": "default" }
+    },
+    {
+      "id": "help",
+      "texture": "empty",
+      "textureRect": ["|$.#scale * 29|", "|$.#scale * 27|", "|$.#scale * 25|", "|$.#scale * 21|"],
+      "position": ["|$.#scale * 105|", "|$.#scale * 387|"],
+      "anchor": "none",
+      "onClick": [
+        { "name": "resource.pop", "id": "popup" },
+        { "name": "load", "file": "ui/help/help1.json" }
+      ],
+      "onHoverEnter": [
+        { "name": "image.setTexture", "id": "help", "texture": "buttons" },
+        { "name": "text.setText", "id": "txtInfo", "text": "Help\nScreen" }
+      ],
+      "onHoverLeave": [
+        { "name": "image.setTexture", "id": "help", "texture": "empty" },
+        { "name": "text.setText", "id": "txtInfo" }
+      ]
+    },
+    {
+      "id": "score",
+      "texture": "empty",
+      "textureRect": ["|$.#scale * 74|", "|$.#scale * 52|", "|$.#scale * 41|", "|$.#scale * 18|"],
+      "position": ["|$.#scale * 150|", "|$.#scale * 412|"],
+      "anchor": "none",
+      "onClick": [
+        { "name": "resource.pop", "id": "popup" },
+        { "name": "load", "file": "ui/scores.json" }
+      ],
+      "onHoverEnter": [
+        { "name": "image.setTexture", "id": "score", "texture": "buttons" },
+        { "name": "text.setText", "id": "txtInfo", "text": "View High\nSkores" }
+      ],
+      "onHoverLeave": [
+        { "name": "image.setTexture", "id": "score", "texture": "empty" },
+        { "name": "text.setText", "id": "txtInfo" }
+      ]
+    },
+    {
+      "id": "new",
+      "texture": "empty",
+      "textureRect": ["|$.#scale * 21|", 0, "|$.#scale * 27|", "|$.#scale * 21|"],
+      "position": ["|$.#scale * 97|", "|$.#scale * 360|"],
+      "anchor": "none",
+      "onClick": { "name": "load", "file": "ui/play.json" },
+      "onHoverEnter": [
+        { "name": "image.setTexture", "id": "new", "texture": "buttons" },
+        { "name": "text.setText", "id": "txtInfo", "text": "New Game" }
+      ],
+      "onHoverLeave": [
+        { "name": "image.setTexture", "id": "new", "texture": "empty" },
+        { "name": "text.setText", "id": "txtInfo" }
+      ]
+    },
+    {
+      "id": "quit",
+      "texture": "empty",
+      "textureRect": ["|$.#scale * 78|", "|$.#scale * 7|", "|$.#scale * 24|", "|$.#scale * 23|"],
+      "position": ["|$.#scale * 154|", "|$.#scale * 367|"],
+      "anchor": "none",
+      "onClick": {
+        "name": "game.fadeOut",
+        "action": "saveSettingsAndClose"
+      },
+      "onHoverEnter": [
+        { "name": "image.setTexture", "id": "quit", "texture": "buttons" },
+        { "name": "text.setText", "id": "txtInfo", "text": "Quit Game" }
+      ],
+      "onHoverLeave": [
+        { "name": "image.setTexture", "id": "quit", "texture": "empty" },
+        { "name": "text.setText", "id": "txtInfo" }
+      ]
+    },
+    {
+      "id": "txtScoreHover",
+      "texture": "empty",
+      "textureRect": [0, 0, "|$.#scale * 70|", "|$.#scale * 24|"],
+      "position": ["|$.#scale * 95|", "|$.#scale * 148|"],
+      "anchor": "none",
+      "onHoverEnter": { "name": "text.setText", "id": "txtInfo", "text": "Skore" },
+      "onHoverLeave": { "name": "text.setText", "id": "txtInfo" }
+    },
+    {
+      "id": "txtDemonsHover",
+      "texture": "empty",
+      "textureRect": [0, 0, "|$.#scale * 35|", "|$.#scale * 66|"],
+      "position": ["|$.#scale * 81|", "|$.#scale * 188|"],
+      "anchor": "none",
+      "onHoverEnter": { "name": "text.setText", "id": "txtInfo", "text": "Demons" },
+      "onHoverLeave": { "name": "text.setText", "id": "txtInfo" }
+    },
+    {
+      "id": "txtUnitsHover",
+      "texture": "empty",
+      "textureRect": [0, 0, "|$.#scale * 35|", "|$.#scale * 66|"],
+      "position": ["|$.#scale * 116|", "|$.#scale * 188|"],
+      "anchor": "none",
+      "onHoverEnter": { "name": "text.setText", "id": "txtInfo", "text": "Tiles" },
+      "onHoverLeave": { "name": "text.setText", "id": "txtInfo" }
+    },
+    {
+      "id": "txtDetonatorsHover",
+      "texture": "empty",
+      "textureRect": [0, 0, "|$.#scale * 35|", "|$.#scale * 66|"],
+      "position": ["|$.#scale * 151|", "|$.#scale * 188|"],
+      "anchor": "none",
+      "onHoverEnter": { "name": "text.setText", "id": "txtInfo", "text": "Magik" },
+      "onHoverLeave": { "name": "text.setText", "id": "txtInfo" }
+    }
+  ],
+  "text": [
+    {
+      "id": "txtScore",
+      "font": "font2",
+      "position": ["|$.#scale * 161|", "|$.#scale * 152|"],
+      "anchor": "none",
+      "horizontalAlign": "right",
+      "binding": "%level.score%",
+      "text": "0"
+    },
+    {
+      "id": "txtDemons",
+      "font": "font2",
+      "position": ["|$.#scale * 106|", "|$.#scale * 207|"],
+      "anchor": "none",
+      "horizontalAlign": "right",
+      "binding": "%level.demons%",
+      "text": "0"
+    },
+    {
+      "id": "txtUnits",
+      "font": "font2",
+      "position": ["|$.#scale * 140|", "|$.#scale * 207|"],
+      "anchor": "none",
+      "horizontalAlign": "right",
+      "binding": "%level.units%",
+      "text": "0"
+    },
+    {
+      "id": "txtDetonators",
+      "font": "font2",
+      "position": ["|$.#scale * 174|", "|$.#scale * 208|"],
+      "anchor": "none",
+      "horizontalAlign": "right",
+      "binding": "%level.detonators%",
+      "text": "0"
+    },
+    {
+      "id": "txtInfo",
+      "font": "fontMenu",
+      "position": ["|$.#scale * 133|", "|$.#scale * 264|"],
+      "anchor": "none",
+      "horizontalAlign": "center"
+    }
+  ],
+  "load": "level/load.json",
+  "load": "ui/mainMenuInputEvents.json",
+  "load": "ui/mainMenu2.json"
+}

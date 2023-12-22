@@ -1,0 +1,180 @@
+{
+  "replaceVars": "value",
+  "image": {
+    "id": "title",
+    "texture": "background",
+    "textureRect": ["|$.#scale * 130|", "|$.#scale * 130|"],
+    "position": ["|$.#scale * 319|", "|$.#scale * 176|"],
+    "anchor": "none"
+  },
+  "text": [
+    {
+      "id": "scoreNames",
+      "font": "fontScore",
+      "position": ["|$.#scale * 322|", "|$.#scale * 181|"],
+      "anchor": "none"
+    },
+    {
+      "id": "scorePoints",
+      "font": "fontScore",
+      "position": ["|$.#scale * 446|", "|$.#scale * 181|"],
+      "anchor": "none",
+      "horizontalAlign": "right"
+    }
+  ],
+  "replaceVars": false,
+  "action": [
+    {
+      "name": "if.equal",
+      "param1": "%currentLevel.hasHighScore.0%",
+      "param2": true,
+      "then": [
+        {
+          "name": "text.appendText",
+          "id": "scoreNames",
+          "query": "currentLevel",
+          "text": "%highScore.0.name%\n"
+        },
+        {
+          "name": "text.appendText",
+          "id": "scorePoints",
+          "query": "currentLevel",
+          "text": "%highScore.0.score%\n"
+        }
+      ]
+    },
+    {
+      "name": "if.equal",
+      "param1": "%currentLevel.hasHighScore.1%",
+      "param2": true,
+      "then": [
+        {
+          "name": "text.appendText",
+          "id": "scoreNames",
+          "query": "currentLevel",
+          "text": "%highScore.1.name%\n"
+        },
+        {
+          "name": "text.appendText",
+          "id": "scorePoints",
+          "query": "currentLevel",
+          "text": "%highScore.1.score%\n"
+        }
+      ]
+    },
+    {
+      "name": "if.equal",
+      "param1": "%currentLevel.hasHighScore.2%",
+      "param2": true,
+      "then": [
+        {
+          "name": "text.appendText",
+          "id": "scoreNames",
+          "query": "currentLevel",
+          "text": "%highScore.2.name%\n"
+        },
+        {
+          "name": "text.appendText",
+          "id": "scorePoints",
+          "query": "currentLevel",
+          "text": "%highScore.2.score%\n"
+        }
+      ]
+    },
+    {
+      "name": "if.equal",
+      "param1": "%currentLevel.hasHighScore.3%",
+      "param2": true,
+      "then": [
+        {
+          "name": "text.appendText",
+          "id": "scoreNames",
+          "query": "currentLevel",
+          "text": "%highScore.3.name%\n"
+        },
+        {
+          "name": "text.appendText",
+          "id": "scorePoints",
+          "query": "currentLevel",
+          "text": "%highScore.3.score%\n"
+        }
+      ]
+    },
+    {
+      "name": "if.equal",
+      "param1": "%currentLevel.hasHighScore.4%",
+      "param2": true,
+      "then": [
+        {
+          "name": "text.appendText",
+          "id": "scoreNames",
+          "query": "currentLevel",
+          "text": "%highScore.4.name%\n"
+        },
+        {
+          "name": "text.appendText",
+          "id": "scorePoints",
+          "query": "currentLevel",
+          "text": "%highScore.4.score%\n"
+        }
+      ]
+    },
+    {
+      "name": "if.equal",
+      "param1": "%currentLevel.hasHighScore.5%",
+      "param2": true,
+      "then": [
+        {
+          "name": "text.appendText",
+          "id": "scoreNames",
+          "query": "currentLevel",
+          "text": "%highScore.5.name%\n"
+        },
+        {
+          "name": "text.appendText",
+          "id": "scorePoints",
+          "query": "currentLevel",
+          "text": "%highScore.5.score%\n"
+        }
+      ]
+    },
+    {
+      "name": "if.equal",
+      "param1": "%currentLevel.hasHighScore.6%",
+      "param2": true,
+      "then": [
+        {
+          "name": "text.appendText",
+          "id": "scoreNames",
+          "query": "currentLevel",
+          "text": "%highScore.6.name%\n"
+        },
+        {
+          "name": "text.appendText",
+          "id": "scorePoints",
+          "query": "currentLevel",
+          "text": "%highScore.6.score%\n"
+        }
+      ]
+    },
+    {
+      "name": "if.equal",
+      "param1": "%currentLevel.hasHighScore.7%",
+      "param2": true,
+      "then": [
+        {
+          "name": "text.appendText",
+          "id": "scoreNames",
+          "query": "currentLevel",
+          "text": "%highScore.7.name%\n"
+        },
+        {
+          "name": "text.appendText",
+          "id": "scorePoints",
+          "query": "currentLevel",
+          "text": "%highScore.7.score%\n"
+        }
+      ]
+    }
+  ]
+}

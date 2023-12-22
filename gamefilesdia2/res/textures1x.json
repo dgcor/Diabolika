@@ -55,18 +55,17 @@
     {
       "id": "strawGolem",
       "texture": "ent",
-      "directions": 4,
       "rects": [
         { "rect": [0, 0, 32, 64] },
         { "rect": [32, 0, 32, 64] },
         { "rect": [64, 0, 32, 64] },
         { "rect": [96, 0, 32, 64] }
-      ]
+      ],
+      "groups": { "directions": 4 }
     },
     {
       "id": "hydra",
       "texture": "ent",
-      "directions": 2,
       "rects": [
         { "rect": [0, 64, 32, 64] },
         { "rect": [32, 64, 32, 64] },
@@ -84,7 +83,8 @@
         { "rect": [416, 64, 32, 64] },
         { "rect": [448, 64, 32, 64] },
         { "rect": [480, 64, 32, 64] }
-      ]
+      ],
+      "groups": { "directions": 2 }
     },
     {
       "id": "blueImp",
@@ -154,7 +154,6 @@
     {
       "id": "kannon",
       "texture": "ent",
-      "directions": [[0, 6], [7, 7], [8, 8], [9, 9]],
       "rects": [
         { "rect": [0, 384, 32, 64] },
         { "rect": [32, 384, 32, 64] },
@@ -166,7 +165,8 @@
         { "rect": [224, 384, 32, 64] },
         { "rect": [256, 384, 32, 64] },
         { "rect": [288, 384, 32, 64] }
-      ]
+      ],
+      "groups": { "directions": [[0, 6], [7, 7], [8, 8], [9, 9]] }
     },
     {
       "id": "magikMissile",
@@ -228,13 +228,13 @@
     {
       "id": "ironMaiden",
       "texture": "ent",
-      "directions": 4,
       "rects": [
         { "rect": [0, 704, 32, 64] },
         { "rect": [32, 704, 32, 64] },
         { "rect": [64, 704, 32, 64] },
         { "rect": [96, 704, 32, 64] }
-      ]
+      ],
+      "groups": { "directions": 4 }
     },
     {
       "id": "kultist",
@@ -283,8 +283,18 @@
     {
       "id": "tile",
       "texture": "tile",
-      "frames": [4, 1],
-      "direction": "horizontal"
+      "rects": [
+        { "rect": [0, 0, 32, 32] },
+        { "rect": [32, 0, 32, 32] },
+        { "rect": [64, 0, 32, 32] },
+        { "rect": [96, 0, 32, 32] }
+      ],
+      "groups": [
+        { "range": [0, 0], "animationType": "playOnce" },
+        { "range": [1, 1], "animationType": "playOnce" },
+        { "range": [2, 2], "animationType": "playOnce" },
+        { "range": [3, 3], "animationType": "playOnce" }
+      ]
     },
     {
       "id": "explodeCursor",
@@ -359,7 +369,6 @@
     {
       "id": "explosionkannont",
       "texture": "fx",
-      "directions": 4,
       "rects": [
         { "rect": [0, 64, 32, 64], "offset": [0, 32] },
         { "rect": [0, 64, 32, 64], "offset": [0, 40] },
@@ -553,7 +562,8 @@
         { "rect": [0, 64, 32, 64], "offset": [392, 0] },
         { "rect": [0, 64, 32, 64], "offset": [400, 0] },
         { "rect": [0, 64, 32, 64], "offset": [408, 0] }
-      ]
+      ],
+      "groups": { "directions": 4 }
     },
     {
       "id": "explosionkannonFire",

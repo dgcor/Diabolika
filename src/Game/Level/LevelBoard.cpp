@@ -50,6 +50,16 @@ bool LevelBoard::isCoordValid(PairInt16 boardPos) const
 		boardPos.y < size.y);
 }
 
+bool LevelBoard::isCoordFree(PairInt16 boardPos) const
+{
+	if (isCoordValid(boardPos) == true)
+	{
+		const auto& cell = get(boardPos);
+		return cell.isWall == false && cell.unit == nullptr;
+	}
+	return false;
+}
+
 bool LevelBoard::hasUnit(PairInt16 boardPos) const
 {
 	if (isCoordValid(boardPos) == true)

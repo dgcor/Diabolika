@@ -215,9 +215,7 @@
       "action": [
         { "name": "level.makeMove" },
         "updateUnitQueues",
-        "hideLeftClickMsg1",
-        "showLeftClickMsg2",
-        "showLeftClickMsg3"
+        "hideLeftClickMsg"
       ]
     },
     {

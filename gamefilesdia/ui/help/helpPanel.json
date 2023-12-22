@@ -1,0 +1,19 @@
+{
+  "action": {
+    "name": "resource.add",
+    "id": "popup",
+    "ignorePrevious": true
+  },
+  "inputEvent": {
+    "gameInputEvent": ["enter", "help", "space"],
+    "action": "#btnBackground.click"
+  },
+  "replaceVars": "value",
+  "image": {
+    "id": "title",
+    "texture": "background2",
+    "textureRect": ["|$.#scale * 420|", "|$.#scale * 384|"],
+    "position": ["|$.#scale * 192|", "|$.#scale * 49|"],
+    "anchor": "none"
+  }
+}

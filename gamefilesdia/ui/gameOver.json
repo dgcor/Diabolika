@@ -1,0 +1,40 @@
+{
+  "audio": {
+    "id": "gameover",
+    "file": "sfx/gameover.wav",
+    "play": true
+  },
+  "replaceVars": "value",
+  "image": [
+    {
+      "id": "title",
+      "texture": "background2",
+      "textureRect": ["|$.#scale * 126|", "|$.#scale * 127|"],
+      "position": ["|$.#scale * 321|", "|$.#scale * 178|"],
+      "anchor": "none"
+    },
+    {
+      "id": "gameOverTitle",
+      "texture": "gameover",
+      "position": ["|$.#scale * 333|", "|$.#scale * 181|"],
+      "anchor": "none"
+    },
+    {
+      "id": "gameOverDevil",
+      "texturePack": "devil",
+      "textureIndex": 1,
+      "position": ["|$.#scale * 323|", "|$.#scale * 195|"],
+      "anchor": "none"
+    }
+  ],
+  "event": {
+    "time": 4.0,
+    "addToFront": true,
+    "action": {
+      "name": "if.greater",
+      "param1": "%currentLevel.score%",
+      "param2": "%currentLevel.highScore.lowest.score%",
+      "then": { "name": "load", "file": "ui/gameOverHighScore.json" }
+    }
+  }
+}

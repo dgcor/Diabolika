@@ -1,0 +1,34 @@
+{
+  "load": "ui/help/helpPanel.json",
+  "replaceVars": "value",
+  "button": {
+    "id": "default",
+    "texture": "empty",
+    "textureRect": ["|game.refSize.x|", "|game.refSize.y|"],
+    "resizable": true,
+    "anchor": "all",
+    "onClick": { "name": "resource.pop", "id": "popup" }
+  },
+  "image": {
+    "id": "devil",
+    "texturePack": "devil",
+    "position": ["|$.#scale * 315|", "|$.#scale * 222|"],
+    "anchor": "none"
+  },
+  "text": [
+    {
+      "id": "txtHelp1",
+      "font": "font",
+      "position": ["|$.#scale * 196|", "|$.#scale * 52|"],
+      "anchor": "none",
+      "file": "ui/help/help5-1.txt"
+    },
+    {
+      "id": "txtHelp2",
+      "font": "font",
+      "position": ["|$.#scale * 261|", "|$.#scale * 356|"],
+      "anchor": "none",
+      "file": "ui/help/help5-2.txt"
+    }
+  ]
+}

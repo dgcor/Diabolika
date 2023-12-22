@@ -48,6 +48,7 @@ public:
 	void set(int16_t x, int16_t y, LevelCell&& cell);
 
 	bool isCoordValid(PairInt16 boardPos) const;
+	bool isCoordFree(PairInt16 boardPos) const;
 
 	bool hasUnit(PairInt16 boardPos) const;
 	std::shared_ptr<Unit> addUnit(const std::shared_ptr<Unit>& unit, PairInt16 boardPos);

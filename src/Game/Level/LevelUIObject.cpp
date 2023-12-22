@@ -116,6 +116,9 @@ bool LevelUIObject::getProperty(const Level& level, const std::string_view prop,
 	case str2int16("units"):
 		var = Variable((int64_t)level.gameState.units);
 		return true;
+	case str2int16("walls"):
+		var = Variable((int64_t)level.gameState.walls);
+		return true;
 	case str2int16("hasQueuedUnit"):
 	{
 		auto idx = Utils::strtou(props.second);

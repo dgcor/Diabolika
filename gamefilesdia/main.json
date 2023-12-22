@@ -1,0 +1,24 @@
+{
+  "game": {
+    "title" : "Diabolika",
+    "version": "1.0",
+    "saveDir": ".diabolika",
+    "refSize": [640, 480],
+    "minSize": [640, 480],
+    "size": [640, 480],
+    "frameRate": 60,
+    "keepAR": true,
+    "stretchToFit": true,
+    "smoothScreen": true,
+    "load": "settings.json",
+    "load": "res/updateSettings.json",
+    "init": true
+  },
+  "action": {
+    "name": "if.equal",
+    "param1": { "name": "file.exists", "file": "gfx/buttons.png" },
+    "param2": true,
+    "then": { "name": "load", "file": "ui/loadMain.json" },
+    "else": { "name": "load", "file": "ui/dataMissing.json" }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "level": {
+    "id": "level",
+    "highScores": [
+      {
+        "name": "Empty",
+        "level": 0,
+        "score": 0
+      },
+      {
+        "name": "Empty",
+        "level": 0,
+        "score": 0
+      },
+      {
+        "name": "Empty",
+        "level": 0,
+        "score": 0
+      },
+      {
+        "name": "Empty",
+        "level": 0,
+        "score": 0
+      },
+      {
+        "name": "Empty",
+        "level": 0,
+        "score": 0
+      },
+      {
+        "name": "Empty",
+        "level": 0,
+        "score": 0
+      },
+      {
+        "name": "Empty",
+        "level": 0,
+        "score": 0
+      },
+      {
+        "name": "Empty",
+        "level": 0,
+        "score": 0
+      }
+    ]
+  }
+}

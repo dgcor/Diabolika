@@ -1,0 +1,6 @@
+Tile Explanation
+_________________
+
+These are the tiles that you use to build chain reactions. Tiles explode when they
+come in contact with a flame (exploding in the manner shown below and possibly
+igniting other tiles).

@@ -3,6 +3,21 @@
   "defaults": {},
   "configurations": [
     {
+      "name": "Diabolika",
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "",
+      "currentDir": "."
+    },
+    {
+      "name": "Diabolika 1",
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "",
+      "currentDir": ".",
+      "args": [ "gamefilesdia" ]
+    },
+    {
       "name": "Diabolika 2",
       "type": "default",
       "project": "CMakeLists.txt",

@@ -6,7 +6,9 @@
 
 struct LevelCell
 {
-	Image tile;
+	uint32_t tileGroupIdx{ 0 };
+	Animation tile;
 	Animation anim;
 	std::shared_ptr<Unit> unit;
+	bool isWall{ false };
 };

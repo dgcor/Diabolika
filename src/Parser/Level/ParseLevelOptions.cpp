@@ -9,14 +9,17 @@ namespace Parser
 
 	void parseLevelOptions(LevelOptionsManager& optionsManager, const Value& elem)
 	{
+		constexpr auto maxBound = (unsigned)(12.0 * 12.0 * 0.5);
+
 		LevelOptions options;
 		std::vector<LevelOptions> allOptions;
 		for (const auto& val : elem)
 		{
 			options.level = getUIntKey(val, "level", options.level + 1);
-			options.numUnits = (uint16_t)getUIntKey(val, "units", options.numUnits);
-			options.numDetonators = (uint16_t)getUIntKey(val, "exploders", options.numDetonators);
-			options.maxDemons = (uint16_t)getUIntKey(val, "maxDemons", options.maxDemons);
+			options.numUnits = (uint16_t)std::min(getUIntKey(val, "units", options.numUnits), maxBound);
+			options.numDetonators = (uint16_t)std::clamp(getUIntKey(val, "exploders", options.numDetonators), 1u, maxBound);
+			options.maxDemons = (uint16_t)std::min(getUIntKey(val, "maxDemons", options.maxDemons), maxBound);
+			options.walls = (uint16_t)std::min(getUIntKey(val, "walls", options.walls), maxBound);
 
 			if (isValidArray(val, "insertUnits") == true)
 			{
@@ -29,7 +32,7 @@ namespace Parser
 						continue;
 					}
 					auto count = getStringKey(val2, "count");
-					options.insertUnits.push_back(std::make_pair(id, Formula(count)));
+					options.insertUnits.push_back({ id, Formula(count) });
 				}
 			}
 			if (isValidArray(val, "queueUnits") == true)

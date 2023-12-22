@@ -17,6 +17,7 @@ private:
 	int32_t points{ 0 };
 
 	std::string id;
+	std::string name;
 	std::string type;
 
 	std::string spawns;
@@ -43,9 +44,11 @@ public:
 	auto& getExplosionTexturePack() const noexcept { return explosionTexturePack; }
 
 	auto& Id() const noexcept { return id; }
+	auto& Name() const noexcept { return name; }
 	auto& Type() const noexcept { return type; }
 
 	void Id(const std::string_view id_) { id = id_; }
+	void Name(const std::string_view name_) { name = name_; }
 	void Type(const std::string_view type_) { type = type_; }
 
 	auto Directions() const noexcept { return directions; }
