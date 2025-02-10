@@ -30,7 +30,7 @@
       "horizontalAlign": "right"
     }
   ],
-  "replaceVars": false,
+  "replaceVars.disable": false,
   "action": [
     {
       "name": "if.equal",

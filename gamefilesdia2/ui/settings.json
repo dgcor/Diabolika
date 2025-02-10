@@ -310,6 +310,6 @@
     "gameInputEvent": ["enter", "esc", "space", "settings"],
     "action": { "name": "menu.click", "id": "settings", "index": "|$.settings.itemCount - 1|" }
   },
-  "replaceVars": false,
-  "action": { "name": "drawable.center", "id": "menuBackground", "idCenterOn": "settings" }
+  "replaceVars.disable": false,
+  "action.update": { "name": "drawable.center", "id": "menuBackground", "idCenterOn": "settings" }
 }

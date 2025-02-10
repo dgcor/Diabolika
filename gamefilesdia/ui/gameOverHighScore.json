@@ -1,5 +1,5 @@
 {
-  "button": {
+  "button.background": {
     "id": "highScoreBlockInput",
     "texture": "empty",
     "textureRect": ["|game.refSize.x|", "|game.refSize.y|"],

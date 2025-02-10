@@ -1,6 +1,6 @@
 {
-  "load": "res/textures.json",
-  "load": "res/fonts.json",
+  "load.textures": "res/textures.json",
+  "load.fonts": "res/fonts.json",
   "inputEvent": {
     "key": ["enter", " ", "esc"],
     "action": { "name": "game.close" }

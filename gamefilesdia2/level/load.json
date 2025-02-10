@@ -1,7 +1,7 @@
 {
-  "load": "level/actions.json",
-  "load": "level/baseLevel.json",
-  "load": "level/defaultLevelOptions.json",
-  "load": "level/highScores.json",
-  "load": "level/unitClasses.json"
+  "load.actions": "level/actions.json",
+  "load.baseLevel": "level/baseLevel.json",
+  "load.defaultLevelOptions": "level/defaultLevelOptions.json",
+  "load.highScores": "level/highScores.json",
+  "load.unitClasses": "level/unitClasses.json"
 }

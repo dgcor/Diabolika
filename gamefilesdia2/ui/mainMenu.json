@@ -108,7 +108,7 @@
       "text": "0"
     }
   ],
-  "load": "level/load.json",
-  "load": "ui/mainMenuInputEvents.json",
-  "load": "ui/mainMenu2.json"
+  "load.level": "level/load.json",
+  "load.inputEvents": "ui/mainMenuInputEvents.json",
+  "load.mainMenu": "ui/mainMenu2.json"
 }
