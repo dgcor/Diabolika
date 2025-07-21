@@ -1,7 +1,6 @@
 name: Package_gamefiles
 
-on:
-  workflow_dispatch:
+on: [workflow_dispatch]
 
 jobs:
   package_gamefiles:
@@ -9,11 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Diabolika
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Install dependencies
-      run: |
-        sudo apt install -yq --no-install-suggests --no-install-recommends ffmpeg fluidsynth > /dev/null
+      run: sudo apt install -yq --no-install-suggests --no-install-recommends ffmpeg fluidsynth fuse imagemagick > /dev/null
 
     - name: Download Diabolika2 and copy original gamefiles
       run: |
@@ -21,8 +19,10 @@ jobs:
         unzip Diabolika2.zip -x "*.dat" "*.exe" "*.txt" -d gamefilesdia2
 
     - name: Download Windows SoundFont
-      run: |
-        wget https://musical-artifacts.com/artifacts/713/gm.sf2 -N
+      # mirrors:
+      # https://musical-artifacts.com/artifacts/713/gm.sf2
+      # https://archive.org/download/541-soundfonts-full-gm-sets/541-soundfonts-full-gm-sets/541_Soundfonts_Full_GM_Sets/GM.sf2
+      run: wget https://archive.org/download/free-soundfonts-sf2-2019-04/Microsoft_gm.sf2 -N -O gm.sf2
 
     - name: Install xbrz
       run: |
@@ -47,7 +47,7 @@ jobs:
       run: 7z a gamefilesdia2.zip ./gamefilesdia2/*
 
     - name: Create gamefiles artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: artifact-gamefilesdia2
         path: gamefilesdia2.zip
